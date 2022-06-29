@@ -1,0 +1,85 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  width: 100%;
+  list-style: none;
+  border-style: ridge;
+  align-items: center;
+  text-decoration: none;
+  border-style: ridge;
+  /* 
+  border-radius: 40px; */
+  background-color: rgba(60, 158, 224, 0.564);
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  margin: 15px;
+  font-family: "Bree Serif", serif;
+
+  border-radius: 15px;
+}
+.nav a:hover {
+  text-decoration: none;
+  color: rgb(75, 86, 95);
+  font-size: 26px;
+  padding: 5px;
+  margin: 15px;
+
+  border-radius: 15px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  margin: auto;
+}
+.title-sklep {
+  /* border-style: ridge; */
+  font-family: Righteous;
+  color: #001f3f;
+  padding: 5px;
+  border-radius: 10px;
+  /* background-color: rgba(67, 116, 118, 0.498); */
+  width: 200px;
+}
+
+.home-main {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(128, 255, 0, 0.326);
+}
+.profile-main {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(0, 208, 255, 0.326);
+}
+.about-main {
+  width: 450px;
+  height: 450px;
+  background-color: rgba(216, 235, 8, 0.326);
+}
+.input {
+  border-style: none;
+}
+.allCart {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  margin: 15px;
+  background-color: rgb(163, 23, 23);
+  border-radius: px;
+}
+.cart-number {
+  font-size: larger;
+  color: rgb(17, 137, 6);
+}
+
+.icon-heder {
+  width: 30px;
+  height: 30px;
+}
