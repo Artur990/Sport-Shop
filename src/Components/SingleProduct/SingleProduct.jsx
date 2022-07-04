@@ -3,6 +3,7 @@ import { CartState } from "../../context/Context";
 import FormValue from "../FormValue/FormValue";
 import "./SingleProduct.css";
 import { FaShippingFast } from "react-icons/fa";
+import { ModalProducts } from "../../Pages/Products/ModalProducts";
 
 const SingleProduct = ({ prod, cart }) => {
   const { dispatch } = CartState();
@@ -27,7 +28,9 @@ const SingleProduct = ({ prod, cart }) => {
     });
   };
 
+  const [isOpen, setIsOpen] = useState(false);
   return (
+    // <ModalProducts isOpen={isOpen} setIsOpen={setIsOpen}>
     <div className="products">
       <img className="img" src={prod.image} alt={prod.name1} />
 
@@ -46,6 +49,7 @@ const SingleProduct = ({ prod, cart }) => {
         </button>
       </spam>
     </div>
+    // </ModalProducts>
   );
 };
 

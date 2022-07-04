@@ -10,9 +10,12 @@ const Profile = () => {
   } = CartState();
 
   const [total, setTotal] = useState();
-
+  console.log(cart);
   useEffect(() => {
-    const totalCount = cart.reduce((acc, cur) => acc + Number(cur.price), 0);
+    const totalCount = cart.reduce(
+      (acc, cur) => acc + Number(cur.price) * Number(cur.qty),
+      0
+    );
     setTotal(totalCount);
   }, [cart]);
 

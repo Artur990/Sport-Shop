@@ -1,0 +1,23 @@
+.dieta-single-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  justify-items: center;
+  width: 300px;
+  height: 20px;
+  padding: 20px;
+  /* border-bottom: 3px rgb(19, 18, 18) ridge; */
+}
+.dieta-single-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.dieta-single-button {
+  width: 80px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: rgba(54, 175, 245, 0.959);
+  color: aliceblue;
+}

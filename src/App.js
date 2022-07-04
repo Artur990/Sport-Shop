@@ -5,9 +5,11 @@ import Header from "./Components/Header/Header";
 import Home from "./Pages/Home/Home";
 import Cart from "./Pages/Cart/Cart";
 import Products from "./Pages/Products/Products";
-import DlaczegoWartoUprawiacSport from "./Pages/dlaczegoWartoUprawiacSport/DlaczegoWartoUprawiacSport";
-import Plany from "./Pages/Plany/Plany";
-import Silownia from "./Pages/Plany/Silownia";
+import DlaczegoWartoUprawiacSport from "./Pages/DoingSport/DoingSport";
+import Plany from "./Pages/Plans/Plan";
+import Gym from "./Pages/Plans/Gym/Gym";
+import Diet from "./Pages/Plans/Diets/Diet.jsx";
+import Form from "./Pages/Form/Form";
 import "./App.css";
 
 function App() {
@@ -24,11 +26,12 @@ function App() {
         <Route path="/about" element={<Products />} />
 
         <Route path="plantreningowy" element={<Plany />} />
-        <Route path="plantreningowy/silownia" element={<Silownia />} />
+        <Route path="plantreningowy/silownia" element={<Gym />} />
+        <Route path="plantreningowy/dieta" element={<Diet />} />
 
-        <Route path="profile" element={<Cart />}>
-          <Route path="profile/Form" element={<Cart />} />
-        </Route>
+        <Route path="profile" element={<Cart />} />
+        <Route path="form" element={<Form />} />
+        <Route path="profile/Form" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

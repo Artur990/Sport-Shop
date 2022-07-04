@@ -4,6 +4,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 // import AiFillHome from "react-icons/Ai";
 import { CartState } from "../../context/Context";
+import { GrLogin } from "react-icons/gr";
 
 import "./Header.css";
 
@@ -20,34 +21,42 @@ const Header = () => {
     <div className="title">
       {/* <h2 className="title-sklep">Lubimy sport</h2> */}
       <ul className="nav">
-        <h2 className="title-sklep">Lubimy sport</h2>
-        <li>
-          <Link to="/">
-            <AiOutlineHome className="icon-heder" />
-          </Link>
-        </li>
+        <div className="nav-left">
+          <h2 className="title-sklep">Lubimy sport</h2>
+          <li>
+            <Link to="/">
+              <AiOutlineHome className="icon-heder" />
+            </Link>
+          </li>
 
-        <li>
-          <Link to="/about">Produkty</Link>
-        </li>
-        <li>
-          <Link to="/dlaczegoWartoUprawiacSport">
-            Dlaczego warto uprawiać sport
-          </Link>
-        </li>
-        <li>
-          <Link to="/planTreningowy">Plany Treningowe</Link>
-        </li>
-        <li>
-          <Link to="/about">Ankieta</Link>
-        </li>
-
-        <li>
-          <Link to="/profile">
-            <HiOutlineShoppingCart fontSize="25px" />
-            {cart.length}
-          </Link>
-        </li>
+          <li>
+            <Link to="/about">Produkty</Link>
+          </li>
+          <li>
+            <Link to="/dlaczegoWartoUprawiacSport">
+              Dlaczego warto uprawiać sport
+            </Link>
+          </li>
+          <li>
+            <Link to="/planTreningowy">Plany Treningowe</Link>
+          </li>
+          <li>
+            <Link to="/about">Ankieta</Link>
+          </li>
+        </div>
+        <div className="nav-right">
+          <li>
+            <Link to="/profile">
+              <HiOutlineShoppingCart fontSize="25px" />
+              {cart.length}
+            </Link>
+          </li>
+          <li>
+            <Link to="/form">
+              <GrLogin fontSize="25px" />
+            </Link>
+          </li>
+        </div>
       </ul>
     </div>
   );

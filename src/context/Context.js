@@ -2,6 +2,12 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 import { faker } from "@faker-js/faker";
 import { cartReducer } from "./Reducer";
 import { productReducer } from "./Reducer";
+import { foodReducer } from "./Reducer";
+import { dinner } from "../data/food";
+import { snacks } from "../data/food";
+import { breakFast } from "../data/food";
+import { lunch } from "../data/food";
+// import { breakfast } from "../data/food";
 // import { tr } from "@guru-js/faker/lib/locales";
 export const Cart = createContext();
 
@@ -15,6 +21,7 @@ function Context({ children }) {
     fast: Boolean(Math.round(Math.random())),
     ratings: [Math.floor(Math.random() * (5 - 1)) + 1],
   }));
+
   const [state, dispatch] = useReducer(cartReducer, {
     products: products,
     cart: [],
@@ -23,8 +30,16 @@ function Context({ children }) {
     byfastDeliver: false,
   });
 
-  // const [empty, setEmpty] = useState(false);
   const [change, setChange] = useState(true);
+
+  const [food, foodDispatche] = useReducer(foodReducer, {
+    breakFast: breakFast,
+    lunch: lunch,
+    dinner: dinner,
+    snacks: snacks,
+    foodAdd: [],
+  });
+
   return (
     <Cart.Provider
       value={{
@@ -34,6 +49,9 @@ function Context({ children }) {
         setChange,
         productState,
         productDispatch,
+        food,
+        lunch,
+        foodDispatche,
       }}
     >
       {children}

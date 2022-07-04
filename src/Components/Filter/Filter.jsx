@@ -20,7 +20,7 @@ function Filter() {
     <div className="filter-main">
       <spam className="sort-up">
         <input
-          type="radio"
+          type="checkbox"
           name="group1"
           onChange={() =>
             productDispatch({
@@ -34,8 +34,7 @@ function Filter() {
       </spam>
       <spam className="sort-up">
         <input
-          name="group2"
-          type="radio"
+          type="checkbox"
           id={"inline-2"}
           onChange={() =>
             productDispatch({
@@ -51,7 +50,6 @@ function Filter() {
       <spam>
         <input
           type="checkbox"
-          name="group3"
           onChange={() =>
             productDispatch({
               type: "byfastDelivere",

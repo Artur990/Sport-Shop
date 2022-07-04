@@ -1,0 +1,22 @@
+.portal-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.765);
+  z-index: 1000;
+}
+.portal {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  background-color: rgb(249, 249, 249);
+  z-index: 1000;
+  align-items: center;
+}
+.bix {
+  display: flex;
+  flex-direction: column;
+}

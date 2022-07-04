@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Products.css";
 import { CartState } from "../../context/Context";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
 import Filter from "../../Components/Filter/Filter";
+
+import { ModalProducts } from "./ModalProducts";
 // import logo from "./fll.jpg";
 const Products = ({ prod }) => {
   const {
@@ -22,22 +24,28 @@ const Products = ({ prod }) => {
     }
     return sortedtProdusct;
   };
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="home-prod">
         <Filter className="filter-prod" />
 
-        <div className="main-products">
+        <div
+          className="main-products"
+          // isOpen={isOpen}
+          // setIsOpen={setIsOpen}
+        >
           {transformProducts().map((prod) => (
             <SingleProduct
               prod={prod}
               key={prod.id}
+              onClick={() => setIsOpen(true)}
               // cart={cart}
               // setCart={setCart}
             />
           ))}
         </div>
-        <img src="./colorful-umbrella-1176220.jpg" alt="ss"></img>
       </div>
     </>
   );
