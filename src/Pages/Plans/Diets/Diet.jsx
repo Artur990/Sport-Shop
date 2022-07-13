@@ -3,83 +3,73 @@ import { CartState } from "../../../context/Context";
 import "./Diet.css";
 import DietSingle from "./DietSingle";
 import DietAdd from "./DietAdd";
-import { allFoodCategories } from "../../../data/food";
+// import { allFoodCategories } from "../../../data/food";
+// import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 const Dieta = () => {
   const { food } = CartState();
-  // console.log(food.snacks);
 
-  const [fitresCategories, setFiltersCategories] = useState(
-    allFoodCategories.breakFast
-  );
+  const [fitresCategories, setFiltersCategories] = useState([]);
 
   const [total, setTotal] = useState();
 
   useEffect(() => {
-    const totalCount = food.foodAdd.reduce(
+    const totalCount = food.foodCart.reduce(
       (acc, cur) => acc + Number(cur.kcal) * Number(cur.qty),
       0
     );
     setTotal(totalCount);
-  }, [food.foodAdd]);
+  }, [food.foodCart]);
 
+  console.log(food.foodCart);
   const handleFoodType = (type) => {
-    if (type === "breakfast") {
-      setFiltersCategories(allFoodCategories.breakFast);
-    }
-    if (type === "dinner") {
-      setFiltersCategories(allFoodCategories.dinner);
-    }
-    if (type === "lunch") {
-      setFiltersCategories(allFoodCategories.lunch);
-    }
-    if (type === "snacks") {
-      setFiltersCategories(allFoodCategories.snacks);
-    }
+    setFiltersCategories(type);
   };
+
   return (
     <>
       <h1 className="title-dieta">
         Sprawdź ile kalorii zjadasz podczas dnia , dodają produkty w
         kalkulatorze
       </h1>
-
       <div className="main-dieta">
-        <div className="products">
-          <div className="btns">
-            <button
-              className="btnss"
-              onClick={() => handleFoodType("breakfast")}
-            >
-              śniadaie
-            </button>
-            <button className="btnss" onClick={() => handleFoodType("dinner")}>
-              Objad
-            </button>
-            <button className="btnss" onClick={() => handleFoodType("lunch")}>
-              Kolacja
-            </button>
-            <button className="btnss" onClick={() => handleFoodType("snacks")}>
-              Przekąski
-            </button>
+        <div className="btn-and-product">
+          <div className="btn-diet">
+            {food.foods.map((f) => (
+              <button
+                className="btn"
+                kay={f.id}
+                onClick={() => handleFoodType(f.foods.map((f) => f))}
+              >
+                {f.type}
+              </button>
+            ))}
           </div>
-          <div className="produkt">
+          <div className="product-diet">
             {fitresCategories.map((prod) => (
-              <DietSingle key={prod.id} prod={prod} />
+              <DietSingle
+                key={prod.id}
+                id={prod.id}
+                prod={prod.name}
+                kcal={prod.kcal}
+              >
+                {prod.name}
+              </DietSingle>
             ))}
           </div>
         </div>
-
         <div className="calculate-main">
-          {food.foodAdd.map((prod) => (
-            <DietAdd prod={prod} key={prod.id} />
+          {food.foodCart.map((prod) => (
+            <DietAdd prod={prod.prod} key={prod.id} id={prod.id} />
           ))}
         </div>
+
         <div className="totals">
           <h2>Total Kalori {total}</h2>
-          <h2>Ilość produktów {food.foodAdd.length}</h2>
+          <h2>Ilość produktów {food.foodCart.length}</h2>
         </div>
       </div>
+
       <div className="secend-main-dieta">
         <div className="dieta">
           <h2>Czym kierować się przy wyborze diety odchudzającej?</h2>

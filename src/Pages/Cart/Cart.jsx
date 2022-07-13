@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { CartState } from "../../context/Context";
 import "./Cart.css";
 import SingleProductCart from "./SingleProductCart";
+import { CgDollar } from "react-icons/cg";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 const Profile = () => {
   const {
@@ -18,7 +20,7 @@ const Profile = () => {
     );
     setTotal(totalCount);
   }, [cart]);
-
+  console.log(cart);
   return (
     <>
       <div className="main-cart">
@@ -34,9 +36,13 @@ const Profile = () => {
           )}
         </div>
         <div className="filter-cart">
-          <h3>SubTotal: {total} $</h3>
-          <h3>Total {cart.length}</h3>
-          <button>Zamóws </button>
+          <h3>
+            SubTotal: {total} <CgDollar />
+          </h3>
+          <h3>
+            Total {cart.length} <MdOutlineProductionQuantityLimits />
+          </h3>
+          <button className="cartbutton">Zamów </button>
         </div>
       </div>
       <div className="main-foot-cart">Dane firmy:</div>

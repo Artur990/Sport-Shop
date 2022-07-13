@@ -1,69 +1,65 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  width: 96%;
-  list-style: none;
-  border-style: ridge;
-  align-items: center;
-  text-decoration: none;
-  border-style: ridge;
-  /* 
-  border-radius: 40px; */
-  background-color: rgba(60, 158, 224, 0.564);
-}
-.nav-left {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-}
-.nav-right {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-}
-.nav a {
-  text-decoration: none;
-  color: black;
-  padding: 5px;
-  margin: 15px;
-  font-family: "Bree Serif", serif;
-
-  border-radius: 15px;
-}
-.nav a:hover {
-  text-decoration: none;
-  color: rgb(75, 86, 95);
-
-  padding: 5px;
-  margin: 15px;
-
-  border-radius: 15px;
+* {
+  box-sizing: border-box;
 }
 .title {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-
-  margin: auto;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 96vw;
+  min-width: 80vw;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0px;
+  border-bottom: solid 1px;
+  padding: 10px 10px;
+
+  background-color: rgba(251, 250, 250, 0.564);
+}
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  /* width: calc(100% - 50px); */
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  font-family: "Bree Serif", serif;
+  display: flex;
+
+  border-radius: 15px;
+}
+.nav a:hover {
+  color: rgb(136, 141, 146);
+}
+.nav a:active {
+  color: rgb(136, 141, 146);
+}
+
 .title-sklep {
-  /* border-style: ridge; */
   font-family: Righteous;
   color: #001f3f;
   padding: 5px;
   border-radius: 10px;
-  /* background-color: rgba(67, 116, 118, 0.498); */
   width: 200px;
 }
-
+/* 
 .home-main {
   width: 450px;
   height: 450px;
@@ -78,22 +74,7 @@
   width: 450px;
   height: 450px;
   background-color: rgba(216, 235, 8, 0.326);
-}
-.input {
-  border-style: none;
-}
-.allCart {
-  text-decoration: none;
-  color: black;
-  padding: 15px;
-  margin: 15px;
-  background-color: rgb(163, 23, 23);
-  border-radius: px;
-}
-.cart-number {
-  font-size: larger;
-  color: rgb(17, 137, 6);
-}
+} */
 
 .icon-heder {
   width: 30px;

@@ -1,15 +1,10 @@
 .main-heder {
   width: 100%;
+  min-width: 85%;
   height: 80vh;
   display: flex;
   justify-items: center;
   align-items: center;
-  /* background-color: rgba(89, 131, 252, 1);
-  background-image: linear-gradient(
-    172deg,
-    rgba(89, 131, 252, 1) 0%,
-    rgba(138, 152, 190, 1) 100%
-  ); */
 }
 .title-produsts {
   text-align: center;
@@ -23,40 +18,35 @@
 }
 .main-foot {
   display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
   width: 100%;
+  min-width: 85%;
   font-family: "Manrope";
-  height: 40vh;
-  background-color: #0074d9;
-  color: #dddddd;
-}
-.mian-foot1 {
-  width: 30%;
-  padding: 10px;
-  font-family: "Righteous", cursive;
-  color: #dddddd;
-  text-align: center;
-}
-.mian-foot2 {
-  width: 30%;
-  padding: 10px;
-  color: #dddddd;
-  text-align: center;
-}
-.mian-foot3 {
-  width: 30%;
-  padding: 10px;
-  color: #dddddd;
-  text-align: center;
+  height: 45vh;
+  background-color: #7aaedc;
+  color: #2c2a2a;
 }
 
-.main-img {
-  width: 80%;
-  height: 80%;
-  display: flex;
-  border-radius: 30px;
-  -webkit-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
-  -moz-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
-  box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
+.mmain-foot-list {
+  width: 33%;
+  min-width: 30%;
+  text-align: start;
+  padding: 20px 10px;
+  font-family: "Righteous", cursive;
+  color: #2c2a2a;
+}
+.main-foot-list h2 {
+  text-align: center;
+  padding: 15px 10px;
+}
+
+.list-foot {
+  padding: 5px 10px;
+}
+.main-list {
+  list-style: none;
 }
 .arrow-left {
   display: flex;
@@ -82,7 +72,4 @@
 .arrow-left1 {
   width: 90px;
   height: 90px;
-}
-.main-foot {
-  color: rgb(13, 24, 36);
 }

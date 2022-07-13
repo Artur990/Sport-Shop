@@ -19,10 +19,13 @@ const Header = () => {
   } = CartState();
   return (
     <div className="title">
-      {/* <h2 className="title-sklep">Lubimy sport</h2> */}
       <ul className="nav">
         <div className="nav-left">
-          <h2 className="title-sklep">Lubimy sport</h2>
+          <li>
+            <Link to="/">
+              <h2 className="title-sklep">Lubimy sport</h2>
+            </Link>
+          </li>
           <li>
             <Link to="/">
               <AiOutlineHome className="icon-heder" />
@@ -30,7 +33,7 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="/about">Produkty</Link>
+            <Link to="/products">Produkty</Link>
           </li>
           <li>
             <Link to="/dlaczegoWartoUprawiacSport">
@@ -40,15 +43,12 @@ const Header = () => {
           <li>
             <Link to="/planTreningowy">Plany Treningowe</Link>
           </li>
-          <li>
-            <Link to="/about">Ankieta</Link>
-          </li>
         </div>
         <div className="nav-right">
           <li>
             <Link to="/profile">
               <HiOutlineShoppingCart fontSize="25px" />
-              {cart.length}
+              <div style={{ color: "blue" }}>{cart.length}</div>
             </Link>
           </li>
           <li>

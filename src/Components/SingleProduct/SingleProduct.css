@@ -1,29 +1,85 @@
-.home {
-  display: flex;
-}
-.produscts-container {
+/* .produscts-container {
   display: flex;
   width: 100%;
   padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
-}
+} */
 .products {
   display: flex;
   align-items: center;
   align-content: space-between;
   justify-content: space-between;
-  flex-flow: column;
-  width: 20%;
-  height: 60%;
-  padding: 5px;
-  margin: 5px;
+  flex-direction: column;
+  width: 20vw;
+  min-width: 250px;
+  height: 70vh;
+  min-height: 65vmin;
+
+  padding: 0.2rem;
+  margin: 0.2rem;
   border-style: ridge;
   border-radius: 14px;
   box-shadow: 5px gray;
   background-color: rgb(255, 255, 255);
 }
-.products-line {
+.products h3 {
+  text-align: center;
+}
+.img {
+  width: 200px;
+  height: 200px;
+}
+.deliver {
+  display: flex;
+}
+.icon-deliver {
+  width: 2rem;
+  height: 2rem;
+}
+.pice-and-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  padding-right: 17px;
+}
+.price {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+.button-product {
+  width: 6rem;
+  height: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+
+  background-color: rgba(11, 156, 240, 0.959);
+  color: rgb(1, 7, 12);
+  cursor: pointer;
+}
+.button:hover,
+.button:active {
+  background-color: rgb(6, 106, 247);
+  color: rgb(15, 15, 15);
+  border: none;
+}
+.stars {
+  color: gold;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 5px;
+  border-bottom: solid 1px;
+}
+
+/* .products-line {
   width: 90%;
   padding: 5px;
   margin: 5px;
@@ -34,25 +90,15 @@
   align-items: center;
 
   background-color: rgb(141, 141, 141);
-}
-.img {
-  width: 200px;
-  height: 200px;
-}
-.buttons {
+} */
+
+/* .buttons {
   display: flex;
-  /* justify-content: space-around; */
+   justify-content: space-around;
   justify-items: center;
   align-items: center;
-}
-.button {
-  border-radius: 10px;
-  width: 85px;
-  height: 30px;
-
-  color: rgb(2, 2, 2);
-  background-color: rgb(108, 118, 252);
-}
+} */
+/* 
 .filters {
   background-color: aquamarine(192, 105, 192);
   color: white;
@@ -75,24 +121,4 @@
   height: 40px;
   color: black;
   background-color: aquamarine;
-}
-
-.cena-button {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding-right: 17px;
-}
-.dostawa {
-  display: flex;
-}
-.icon-dostawa {
-  width: 30px;
-  height: 30px;
-}
-.price {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding-right: 10px;
-  font-size: 25px;
-}
+} */

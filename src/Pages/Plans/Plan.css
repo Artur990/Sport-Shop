@@ -1,4 +1,4 @@
-.plany-heder {
+.plan-heder {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@
     rgba(41, 53, 86, 1) 100%
   );
 }
-.plany-heder-title {
+.plan-heder-title {
   display: flex;
   width: 40%;
   height: 30vh;
@@ -21,7 +21,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.plany-main {
+.plans-main {
   display: flex;
   width: 100%;
   padding: 25px;
@@ -33,7 +33,7 @@
   align-items: center;
   align-content: center;
 }
-.Planbiegania {
+.plan {
   width: 200px;
   height: 200px;
   font-family: "Bree Serif", serif;
@@ -41,49 +41,21 @@
   background-color: rgb(232, 232, 237);
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+
   justify-content: center;
   align-items: center;
   align-content: center;
 }
-.PlanSilownia {
-  width: 200px;
-  height: 200px;
-  font-family: "Bree Serif", serif;
-  border-radius: 50%;
-  background-color: rgb(232, 232, 237);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+.plan:hover,
+.plan:active {
+  background-color: rgba(11, 156, 240, 0.959);
+  color: rgb(209, 206, 206);
+  border: none;
 }
-.PlanDietetycznu {
-  width: 200px;
-  height: 200px;
-  font-family: "Bree Serif", serif;
-  border-radius: 50%;
-  background-color: rgb(232, 232, 237);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-.PlanJoga {
-  width: 200px;
-  height: 200px;
-  font-family: "Bree Serif", serif;
-  border-radius: 50%;
-  background-color: rgb(232, 232, 237);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+
+.plan a {
+  text-decoration: none;
+  color: black;
 }
 .icon {
   width: 70px;

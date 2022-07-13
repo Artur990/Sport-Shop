@@ -1,6 +1,15 @@
 import React from "react";
+import { GrStatusGood } from "react-icons/gr";
+import {
+  BsInstagram,
+  BsFacebook,
+  BsTwitter,
+  BsTelephoneInbound,
+} from "react-icons/bs";
 
-import { CartState } from "../../context/Context";
+import { AiOutlineMail, AiFillStar } from "react-icons/ai";
+import { FaAddressCard } from "react-icons/fa";
+
 import image1 from "../../assets/images/img1.jpg";
 import image2 from "../../assets/images/img2.webp";
 import image3 from "../../assets/images/img3.webp";
@@ -16,19 +25,59 @@ const Home = () => {
     <>
       <Baner photos={obj} />
       <div className="main-foot">
-        <div className="mian-foot1">
-          <h1>Dziękujemu za odwiedziny naszej strony</h1>
+        <div className="main-foot-list">
+          <h2>Kontakt: </h2>
+          <ul className="main-list">
+            <li className="list-foot">
+              <BsTelephoneInbound />
+              Telefon: 050-123-211
+            </li>
+            <li className="list-foot">
+              <AiOutlineMail />
+              Email:lubimySport@adres.com
+            </li>
+            <li className="list-foot">
+              <FaAddressCard />
+              Adres:Toruń ul. Osiedlowa 17
+            </li>
+          </ul>
         </div>
-        <div className="mian-foot2">
-          <h1>Korzyści dla klubowiczów: </h1>
-          <h4> 10% zniżki na każde zakupy</h4>
-          <h4> zniżki świąteczne </h4>
-          <h4> -25% na zakupy w twoje urodziny ! </h4>
+
+        <div className="main-foot-list">
+          <h2> Korzyści dla klubowiczów: </h2>
+          <ul className="main-list">
+            <li className="list-foot">
+              <GrStatusGood />
+              10% zniżki na każde zakupy
+            </li>
+            <li className="list-foot">
+              {" "}
+              <GrStatusGood />
+              zniżki świąteczne{" "}
+            </li>
+            <li className="list-foot">
+              <GrStatusGood style={{ color: "green" }} />
+              -25% na zakupy w twoje urodziny !{" "}
+            </li>
+          </ul>
         </div>
-        <div className="mian-foot3">
+
+        <div className="main-foot-list">
           <h2>dołącz do nas również na: </h2>
-          <div>FACEBOOK</div>
-          <div>Instagram</div>
+          <ul className="main-list">
+            <li className="list-foot">
+              <BsFacebook />
+              FaceBook
+            </li>
+            <li className="list-foot">
+              <BsInstagram />
+              Instagram
+            </li>
+            <li className="list-foot">
+              <BsTwitter />
+              Twitter
+            </li>
+          </ul>
         </div>
       </div>
     </>

@@ -1,12 +1,14 @@
 import React from "react";
-
+import "./DoingSport.css";
 const DlaczegoWartoUprawiacSport = () => {
   return (
     <>
-      <h1>Powody dla których warto uprawiać sport</h1>
-      <div>
-        <h3>Staniesz się konsekwentny</h3>
-        <p>
+      <div className="title-pages1">
+        Powody dla których warto uprawiać sport
+      </div>
+      <div className="container-main1">
+        <div className="title1">Staniesz się konsekwentny</div>
+        <p className="paragraph1">
           Ile to razy słyszałem, że osoby które przebiegły maraton są z całą
           pewnością tak zdeterminowane, że w biznesie są w stanie osiągnąć
           „niemal wszystko”. Przebiegłem maraton, przebiegłem ultramaraton w
@@ -29,8 +31,8 @@ const DlaczegoWartoUprawiacSport = () => {
         </p>
       </div>
       <div>
-        <h3>Nauczysz się walczyć do końca</h3>
-        <p>
+        <div className="title1">Nauczysz się walczyć do końca</div>
+        <p className="paragraph1">
           Jeżeli nie uprawiałeś sportu to być może nie znasz tego uczucia, kiedy
           na ostatnich metrach, w ostatnich sekundach, czy też resztkami sił
           decydujesz się dać z siebie jeszcze więcej żeby wynik był dla Ciebie
@@ -51,8 +53,8 @@ const DlaczegoWartoUprawiacSport = () => {
         </p>
       </div>
       <div>
-        <h3>Popraw swoją koncentrację</h3>
-        <p>
+        <div className="title1">Popraw swoją koncentrację</div>
+        <p className="paragraph1">
           Ok ja mam to opanowane w przypadku biegów oraz yogi. Nie wiem czy tak
           działają wszystkie sporty. Niemniej, w przypadku tych dwóch,
           ewidentnie mam poczucie, że dzięki temu, że uprawiam sport mam więcej

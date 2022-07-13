@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import { CartState } from "../../../context/Context";
 import "./DietAdd.css";
-const DietaAdd = ({ prod }) => {
+const DietaAdd = ({ prod, id }) => {
   const { foodDispatche } = CartState();
 
   const handleClickRemove = () => {
-    foodDispatche({ type: "REMOVE_FROM_CARD", payload: prod });
+    foodDispatche({ type: "REMOVE_FROM_CARD", payload: { id: id } });
   };
 
   const [value, setValue] = useState(0);
   const onChangeValue = (e) => {
     foodDispatche({
       type: "ADD_QTY",
-      payload: { id: prod.id, qty: e.target.value },
+      payload: { id: id, qty: e.target.value },
     });
   };
-
   return (
     <div className="products-add">
-      <div className="description-cart">
-        <h2 style={{ color: "black" }}>{prod.name}</h2>
+      <div className="name-product">
+        <h2 style={{ color: "black" }}>{prod}</h2>
       </div>
-      <div className="inputs-cart">
+      <div className="">
+        100g/
         <input
           type="number"
           className="input-number-cart"
@@ -30,12 +30,12 @@ const DietaAdd = ({ prod }) => {
           max="5"
           placeholder="1"
         ></input>
-        <div className="buttons-cart">
-          <button className="button-cart" onClick={() => handleClickRemove()}>
-            Usuń
-          </button>
-        </div>
       </div>
+      {/* <div className="buttons-cart"> */}
+      <button className="button-cart" onClick={() => handleClickRemove()}>
+        Usuń
+      </button>
+      {/* </div> */}
     </div>
   );
 };

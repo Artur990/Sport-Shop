@@ -22,29 +22,32 @@ const Plany = () => {
 
       {isOpenRun && <Run setIsOpenRun={setIsOpenRun} />}
 
-      <div className="plany-heder">
-        <div className="plany-heder-title">
+      <div className="plan-heder">
+        <div className="plan-heder-title">
           <h1>Dlaczego nasze Plany</h1>
           <h3>Sprawdź co zyskujesz !</h3>
         </div>
 
-        <div className="plany-main">
-          <div className="Planbiegania" onClick={() => setIsOpenRun(true)}>
-            <BiRun className="icon" /> Plan Biegania
+        <div className="plans-main">
+          <div className="plan running" onClick={() => setIsOpenRun(true)}>
+            <BiRun className="icon" />
+            Plan Biegania
           </div>
 
-          <div className="PlanSilownia">
-            <CgGym className="icon" onClick={() => setIsOpen(true)} />
-            <div>Plan siłowni</div>
+          <div className="plan gym">
+            <CgGym
+              className="icon"
+              // onClick={() => setIsOpen(true)}
+            />
+            <Link to="/plantreningowy/silownia">Plan siłowni</Link>
           </div>
 
-          <div className="PlanDietetycznu">
-            {" "}
+          <div className="plan diet">
             <TbHeartHandshake className="icon" />
             <Link to="/plantreningowy/dieta">Plan Dietetyczny</Link>
           </div>
 
-          <div className="PlanJoga">
+          <div className="plan joga">
             {" "}
             <GrYoga className="icon" />
             Plan Joga

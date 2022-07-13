@@ -44,7 +44,8 @@
 }
 
 .main-img {
-  width: 80%;
+  width: 80vw;
+  min-width: 75vmin;
   height: 80%;
   display: flex;
   border-radius: 30px;

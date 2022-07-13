@@ -37,3 +37,19 @@
   padding: 20px;
   border-radius: 20px;
 }
+
+.cartbutton {
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgba(19, 56, 137, 0.959);
+  color: aliceblue;
+  cursor: pointer;
+}
+.cartbutton:hover,
+.cartbutton:active {
+  background-color: rgba(11, 156, 240, 0.959);
+  color: rgb(15, 15, 15);
+  border: none;
+}

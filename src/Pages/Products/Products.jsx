@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Products.css";
 import { CartState } from "../../context/Context";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
+import SingleProductModal from "../../Components/SingleProduct/SingleProductsModal";
 import Filter from "../../Components/Filter/Filter";
 
-import { ModalProducts } from "./ModalProducts";
-// import logo from "./fll.jpg";
 const Products = ({ prod }) => {
   const {
     productState: { sort, Asceding, byfastDeliver },
     state: { products },
+    state,
+    productState,
   } = CartState();
 
   const transformProducts = (e) => {
@@ -22,28 +23,30 @@ const Products = ({ prod }) => {
     if (byfastDeliver) {
       sortedtProdusct = sortedtProdusct.filter((prod) => prod.fast);
     }
+    if (productState.search.length > 3) {
+      sortedtProdusct = sortedtProdusct.filter(
+        (prod) => prod.name1 === productState.search
+      );
+    }
     return sortedtProdusct;
   };
-
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="home-prod">
         <Filter className="filter-prod" />
-
-        <div
-          className="main-products"
-          // isOpen={isOpen}
-          // setIsOpen={setIsOpen}
-        >
+        {productState.search.length > 3 ? (
+          <div>wyszukiwany wynik dla {productState.search} to : </div>
+        ) : (
+          ""
+        )}
+        <div className="main-products">
           {transformProducts().map((prod) => (
-            <SingleProduct
-              prod={prod}
-              key={prod.id}
-              onClick={() => setIsOpen(true)}
-              // cart={cart}
-              // setCart={setCart}
-            />
+            <SingleProduct prod={prod} key={prod.id} />
+          ))}
+        </div>
+        <div>
+          {state.modal.map((prod) => (
+            <SingleProductModal prod={prod} key={prod.id} />
           ))}
         </div>
       </div>

@@ -11,7 +11,6 @@ import Gym from "./Pages/Plans/Gym/Gym";
 import Diet from "./Pages/Plans/Diets/Diet.jsx";
 import Form from "./Pages/Form/Form";
 import "./App.css";
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,9 +22,10 @@ function App() {
           path="/dlaczegoWartoUprawiacSport"
           element={<DlaczegoWartoUprawiacSport />}
         />
-        <Route path="/about" element={<Products />} />
+        <Route path="/products" element={<Products />} />
 
         <Route path="plantreningowy" element={<Plany />} />
+        <Route path="plantreningowy/bieganie" element={<Gym />} />
         <Route path="plantreningowy/silownia" element={<Gym />} />
         <Route path="plantreningowy/dieta" element={<Diet />} />
 

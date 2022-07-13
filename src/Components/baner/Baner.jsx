@@ -10,7 +10,7 @@ function Baner({ photos }) {
   const [index, setIndex] = useState(0);
   console.log(index !== 3);
   const changeNext = () => {
-    if (index !== 3) {
+    if (index !== photos.length - 1) {
       setIndex(index + 1);
     } else {
       setIndex(0);
