@@ -1,0 +1,22 @@
+@use "../../../Components/scss/-butons.scss";
+.dieta-single {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  justify-items: center;
+  width: 25 vw;
+  height: 20px;
+  padding: 20px;
+
+  &__title {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+
+  &__button {
+    @extend .third-button;
+  }
+}

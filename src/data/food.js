@@ -4,51 +4,61 @@ export const foods = [
     foods: [
       {
         id: 1,
+        isOpen: false,
         name: "Kanapka",
         kcal: 158,
       },
       {
         id: 2,
+        isOpen: false,
         name: "pancakes",
         kcal: 227,
       },
       {
         id: 3,
+        isOpen: false,
         name: "jejecznica z bocz.",
         kcal: 260,
       },
       {
         id: 4,
+        isOpen: false,
         name: "croissant ",
         kcal: 406,
       },
       {
         id: 5,
-        name: "sok pomarańczowy",
+        isOpen: false,
+        name: "sok pomar.",
         kcal: 50,
       },
       {
         id: 6,
+        isOpen: false,
         name: "owsianka",
         kcal: 380,
       },
       {
         id: 7,
+        isOpen: false,
         name: "pączek",
         kcal: 450,
       },
       {
         id: 8,
+        isOpen: false,
         name: "tosty",
         kcal: 313,
       },
       {
         id: 9,
+        isOpen: false,
         name: "omlet",
         kcal: 150,
       },
       {
         id: 10,
+        isOpen: false,
         name: "parówki",
         kcal: 229,
       },
@@ -58,52 +68,62 @@ export const foods = [
     type: "obiad",
     foods: [
       {
-        id: 1,
+        id: 11,
+        isOpen: false,
         name: "Schabowy",
         kcal: 158,
       },
       {
-        id: 2,
+        id: 12,
+        isOpen: false,
         name: "Burger",
         kcal: 227,
       },
       {
-        id: 3,
+        id: 13,
+        isOpen: false,
         name: "Pizza",
         kcal: 260,
       },
       {
-        id: 4,
+        id: 14,
+        isOpen: false,
         name: "Sussi ",
         kcal: 406,
       },
       {
-        id: 5,
-        name: "Grilowany kurczak",
+        id: 15,
+        isOpen: false,
+        name: "Grilowany kur.",
         kcal: 50,
       },
       {
-        id: 6,
-        name: "Policzki Wieprzowe",
+        id: 16,
+        isOpen: false,
+        name: "Policzki Wiep.",
         kcal: 380,
       },
       {
-        id: 7,
+        id: 17,
+        isOpen: false,
         name: "Łosoś",
         kcal: 450,
       },
       {
-        id: 8,
+        id: 18,
+        isOpen: false,
         name: "Pasta",
         kcal: 313,
       },
       {
-        id: 9,
+        id: 19,
+        isOpen: false,
         name: "Gołąbki",
         kcal: 150,
       },
       {
-        id: 10,
+        id: 20,
+        isOpen: false,
         name: "Spaghetti",
         kcal: 229,
       },
@@ -113,52 +133,62 @@ export const foods = [
     type: "kolacja",
     foods: [
       {
-        id: 1,
+        id: 21,
+        isOpen: false,
         name: "dinner",
         kcal: 158,
       },
       {
-        id: 2,
+        id: 22,
+        isOpen: false,
         name: "Burger",
         kcal: 227,
       },
       {
-        id: 3,
+        id: 23,
+        isOpen: false,
         name: "Pizza",
         kcal: 260,
       },
       {
-        id: 4,
+        id: 24,
+        isOpen: false,
         name: "Sussi ",
         kcal: 406,
       },
       {
-        id: 5,
-        name: "Grilowany kurczak",
+        id: 25,
+        isOpen: false,
+        name: "Grilowany kur.",
         kcal: 50,
       },
       {
-        id: 6,
-        name: "Policzki Wieprzowe",
+        id: 26,
+        isOpen: false,
+        name: "Policzki Wiep.",
         kcal: 380,
       },
       {
-        id: 7,
+        id: 27,
+        isOpen: false,
         name: "Łosoś",
         kcal: 450,
       },
       {
-        id: 8,
+        id: 28,
+        isOpen: false,
         name: "Pasta",
         kcal: 313,
       },
       {
-        id: 9,
+        id: 29,
+        isOpen: false,
         name: "Gołąbki",
         kcal: 150,
       },
       {
-        id: 10,
+        id: 30,
+        isOpen: false,
         name: "Spaghetti",
         kcal: 229,
       },
@@ -168,287 +198,65 @@ export const foods = [
     type: "przekąski",
     foods: [
       {
-        id: 1,
+        id: 31,
+        isOpen: false,
         name: "ciastko",
         kcal: 158,
       },
       {
-        id: 2,
+        id: 32,
+        isOpen: false,
         name: "Paluszki",
         kcal: 227,
       },
       {
-        id: 3,
+        id: 33,
+        isOpen: false,
         name: "chipsy",
         kcal: 260,
       },
       {
-        id: 4,
+        id: 34,
+        isOpen: false,
         name: "jogurt ",
         kcal: 406,
       },
       {
-        id: 5,
+        id: 35,
+        isOpen: false,
         name: "owoce",
         kcal: 50,
       },
       {
-        id: 6,
+        id: 36,
+        isOpen: false,
         name: "warzywa",
         kcal: 380,
       },
       {
-        id: 7,
+        id: 37,
+        isOpen: false,
         name: "piwo",
         kcal: 450,
       },
       {
-        id: 8,
+        id: 38,
+        isOpen: false,
         name: "wino",
         kcal: 313,
       },
       {
-        id: 9,
+        id: 39,
+        isOpen: false,
         name: "papcor",
         kcal: 150,
       },
       {
-        id: 10,
+        id: 40,
+        isOpen: false,
         name: "krakersy",
         kcal: 229,
       },
     ],
   },
 ];
-
-// export const allFoodCategories = {
-//   breakFast,
-//   lunch,
-//   dinner,
-//   snacks,
-// };
-const foods1 = [
-  {
-    type: "Breakfast",
-    foods: [
-      {
-        id: 1,
-        name: "Kanapka",
-        kcal: 158,
-      },
-      {
-        id: 2,
-        name: "pancakes",
-        kcal: 227,
-      },
-      {
-        id: 3,
-        name: "jejecznica z boczkime",
-        kcal: 260,
-      },
-      {
-        id: 4,
-        name: "croissant ",
-        kcal: 406,
-      },
-      {
-        id: 5,
-        name: "sok pomarańczowya",
-        kcal: 50,
-      },
-      {
-        id: 6,
-        name: "owsianka",
-        kcal: 380,
-      },
-      {
-        id: 7,
-        name: "pączek",
-        kcal: 450,
-      },
-      {
-        id: 8,
-        name: "tosty",
-        kcal: 313,
-      },
-      {
-        id: 9,
-        name: "omlet",
-        kcal: 150,
-      },
-      {
-        id: 10,
-        name: "parówki",
-        kcal: 229,
-      },
-    ],
-  },
-  {
-    type: "Lunch",
-    foods: [
-      {
-        id: 1,
-        name: "Schabowy",
-        kcal: 158,
-      },
-      {
-        id: 2,
-        name: "Burger",
-        kcal: 227,
-      },
-      {
-        id: 3,
-        name: "Pizza",
-        kcal: 260,
-      },
-      {
-        id: 4,
-        name: "Sussi ",
-        kcal: 406,
-      },
-      {
-        id: 5,
-        name: "Grilowany kurczak",
-        kcal: 50,
-      },
-      {
-        id: 6,
-        name: "Policzki Wieprzowe",
-        kcal: 380,
-      },
-      {
-        id: 7,
-        name: "Łosoś",
-        kcal: 450,
-      },
-      {
-        id: 8,
-        name: "Pasta",
-        kcal: 313,
-      },
-      {
-        id: 9,
-        name: "Gołąbki",
-        kcal: 150,
-      },
-      {
-        id: 10,
-        name: "Spaghetti",
-        kcal: 229,
-      },
-    ],
-  },
-  {
-    type: "Dinner",
-    foods: [
-      {
-        id: 1,
-        name: "dinner",
-        kcal: 158,
-      },
-      {
-        id: 2,
-        name: "Burger",
-        kcal: 227,
-      },
-      {
-        id: 3,
-        name: "Pizza",
-        kcal: 260,
-      },
-      {
-        id: 4,
-        name: "Sussi ",
-        kcal: 406,
-      },
-      {
-        id: 5,
-        name: "Grilowany kurczak",
-        kcal: 50,
-      },
-      {
-        id: 6,
-        name: "Policzki Wieprzowe",
-        kcal: 380,
-      },
-      {
-        id: 7,
-        name: "Łosoś",
-        kcal: 450,
-      },
-      {
-        id: 8,
-        name: "Pasta",
-        kcal: 313,
-      },
-      {
-        id: 9,
-        name: "Gołąbki",
-        kcal: 150,
-      },
-      {
-        id: 10,
-        name: "Spaghetti",
-        kcal: 229,
-      },
-    ],
-  },
-  {
-    type: "Snacks",
-    foods: [
-      {
-        id: 1,
-        name: "ciastko",
-        kcal: 158,
-      },
-      {
-        id: 2,
-        name: "Paluszki",
-        kcal: 227,
-      },
-      {
-        id: 3,
-        name: "chipsy",
-        kcal: 260,
-      },
-      {
-        id: 4,
-        name: "jogurt ",
-        kcal: 406,
-      },
-      {
-        id: 5,
-        name: "owoce",
-        kcal: 50,
-      },
-      {
-        id: 6,
-        name: "warzywa",
-        kcal: 380,
-      },
-      {
-        id: 7,
-        name: "piwo",
-        kcal: 450,
-      },
-      {
-        id: 8,
-        name: "wino",
-        kcal: 313,
-      },
-      {
-        id: 9,
-        name: "papcor",
-        kcal: 150,
-      },
-      {
-        id: 10,
-        name: "krakersy",
-        kcal: 229,
-      },
-    ],
-  },
-];
-
-const aa = foods1.map((e) => e.foods.map((e) => e.name === "tosty"));
-console.log(aa);

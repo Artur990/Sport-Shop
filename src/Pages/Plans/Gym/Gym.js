@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Gym";
+import "./Gym.scss";
 const Silownia = () => {
   return (
     <div>
       <h1>Plan Treningowy Siłowni</h1>
       <div className="main-gym">
         <div className="plans-gym"></div>
-        <div className="planss1">
+        <div className="plans-gym__sections">
           <h1>Poniedziałek</h1>
           <h3> Klatka Piersiowa i Triceps</h3>
           <p>
@@ -18,7 +18,7 @@ const Silownia = () => {
             powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
           </div>
         </div>
-        <div className="plans1">
+        <div className="plans-gym__sections">
           <h1>Wtorek</h1>
           <h3> Plecy i Biceps</h3>
           <p>
@@ -29,7 +29,7 @@ const Silownia = () => {
             powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
           </div>
         </div>
-        <div className="plans1">
+        <div className="plans-gym__sections">
           <h1>Środa</h1>
           <h3> Plecy i Biceps</h3>
           <p>
@@ -40,7 +40,7 @@ const Silownia = () => {
             powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
           </div>
         </div>
-        <div className="plans1">
+        <div className="plans-gym__sections">
           <h1>Czwartek</h1>
           <h3> Barki i Przedramiona</h3>
           <p>
@@ -51,7 +51,7 @@ const Silownia = () => {
             powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
           </div>
         </div>
-        <div className="plans1">
+        <div className="plans-gym__sections">
           <h1>Piątek</h1>
           <h3>Uda i Łydki Sobotaa</h3>
           <p>
@@ -62,7 +62,7 @@ const Silownia = () => {
             powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
           </div>
         </div>
-        <div className="plan1">
+        <div className="plans-gym__sections">
           <h1>Sobota i Niedziela</h1>
           <h3>Uda i Łydki Sobotaa</h3>
           <p>

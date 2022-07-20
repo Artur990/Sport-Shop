@@ -1,0 +1,69 @@
+@use "../../Components/scss/-butons.scss";
+.form-main {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgba(240, 242, 243, 0.598);
+  font-family: "Bree Serif", serif;
+
+  &__controls {
+    width: 400px;
+    height: 500px;
+    background-color: none;
+    -webkit-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
+    -moz-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
+    box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+  }
+  &__control {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    background-color: none;
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+  &__control inValid input {
+    width: 90%;
+    height: 25px;
+
+    border-bottom-color: rgb(232, 36, 36);
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+  &__control input {
+    border-bottom-color: rgb(8, 155, 235);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: unset;
+  }
+  &__input:focus {
+    border-bottom: 3px rgb(57, 117, 166);
+  }
+
+  &__control input:hover {
+    background-color: none;
+    border-color: none;
+    border: none;
+  }
+  &__control h5 {
+    color: rgb(231, 153, 153);
+    margin: 0px;
+  }
+  &__btn {
+    @extend .primery-button;
+    width: 7rem;
+    height: 2rem;
+  }
+}

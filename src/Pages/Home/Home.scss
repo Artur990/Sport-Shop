@@ -1,0 +1,41 @@
+.home-main__foot {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
+  width: 100%;
+  min-width: 85%;
+  font-family: "Manrope";
+  height: 45vh;
+  background-color: #7aaedc;
+  color: #2c2a2a;
+
+  &__column {
+    width: 33%;
+    min-width: 30%;
+    text-align: start;
+    padding: 20px 10px;
+    font-family: "Righteous", cursive;
+    color: #2c2a2a;
+    & h2 {
+      text-align: center;
+      padding: 15px 10px;
+    }
+    &__list {
+      display: flex;
+      justify-items: center;
+
+      flex-direction: column;
+      list-style: none;
+      padding: 5px 20px;
+    }
+    &__lists {
+      padding: 10px 10px;
+      margin: 0px;
+    }
+  }
+}
+
+.icon-food {
+  margin-right: 5px;
+}

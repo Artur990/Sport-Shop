@@ -16,65 +16,65 @@ import image3 from "../../assets/images/img3.webp";
 import image4 from "../../assets/images/img4.webp";
 import Baner from "../../Components/baner/Baner";
 
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => {
   const obj = [image1, image2, image3, image4];
-
+  let iconStyles = { color: "green", fontSize: "1.5em" };
   return (
     <>
       <Baner photos={obj} />
-      <div className="main-foot">
-        <div className="main-foot-list">
+      <div className="home-main__foot">
+        <div className="home-main__foot__column">
           <h2>Kontakt: </h2>
-          <ul className="main-list">
-            <li className="list-foot">
-              <BsTelephoneInbound />
+          <ul className="home-main__foot__column__list">
+            <li className="home-main__foot__column__lists">
+              <BsTelephoneInbound className="icon-food" style={iconStyles} />
               Telefon: 050-123-211
             </li>
-            <li className="list-foot">
-              <AiOutlineMail />
+            <li className="home-main__foot__column__lists">
+              <AiOutlineMail className="icon-food" style={iconStyles} />
               Email:lubimySport@adres.com
             </li>
-            <li className="list-foot">
-              <FaAddressCard />
+            <li className="home-main__foot__column__lists">
+              <FaAddressCard className="icon-food" style={iconStyles} />
               Adres:Toruń ul. Osiedlowa 17
             </li>
           </ul>
         </div>
 
-        <div className="main-foot-list">
+        <div className="home-main__foot__column">
           <h2> Korzyści dla klubowiczów: </h2>
-          <ul className="main-list">
-            <li className="list-foot">
-              <GrStatusGood />
+          <ul className="home-main__foot__column__list">
+            <li className="home-main__foot__column__lists">
+              <GrStatusGood className="icon-food" style={iconStyles} />
               10% zniżki na każde zakupy
             </li>
-            <li className="list-foot">
+            <li className="home-main__foot__column__lists">
               {" "}
-              <GrStatusGood />
+              <GrStatusGood className="icon-food" style={iconStyles} />
               zniżki świąteczne{" "}
             </li>
-            <li className="list-foot">
-              <GrStatusGood style={{ color: "green" }} />
+            <li className="home-main__foot__column__lists">
+              <GrStatusGood style={iconStyles} />
               -25% na zakupy w twoje urodziny !{" "}
             </li>
           </ul>
         </div>
 
-        <div className="main-foot-list">
+        <div className="home-main__foot__column">
           <h2>dołącz do nas również na: </h2>
-          <ul className="main-list">
-            <li className="list-foot">
-              <BsFacebook />
+          <ul className="home-main__foot__column__list">
+            <li className="home-main__foot__column__lists">
+              <BsFacebook className="icon-food" />
               FaceBook
             </li>
-            <li className="list-foot">
-              <BsInstagram />
+            <li className="home-main__foot__column__lists">
+              <BsInstagram className="icon-food" />
               Instagram
             </li>
-            <li className="list-foot">
-              <BsTwitter />
+            <li className="home-main__foot__column__lists">
+              <BsTwitter className="icon-food" />
               Twitter
             </li>
           </ul>

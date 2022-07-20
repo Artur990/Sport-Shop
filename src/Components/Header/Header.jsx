@@ -6,7 +6,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { CartState } from "../../context/Context";
 import { GrLogin } from "react-icons/gr";
 
-import "./Header.css";
+import "./Header.scss";
 
 // import { FaSchoppingCart } from "react-icons/fa";
 const Header = () => {
@@ -18,17 +18,17 @@ const Header = () => {
     state: { cart },
   } = CartState();
   return (
-    <div className="title">
-      <ul className="nav">
-        <div className="nav-left">
+    <div className="heder">
+      <ul className="heder__nav">
+        <div className="heder__nav-left">
           <li>
             <Link to="/">
-              <h2 className="title-sklep">Lubimy sport</h2>
+              <h2 className="heder__title-sklep">Lubimy sport</h2>
             </Link>
           </li>
           <li>
             <Link to="/">
-              <AiOutlineHome className="icon-heder" />
+              <AiOutlineHome className="heder__icon-heder" />
             </Link>
           </li>
 
@@ -44,16 +44,16 @@ const Header = () => {
             <Link to="/planTreningowy">Plany Treningowe</Link>
           </li>
         </div>
-        <div className="nav-right">
+        <div className="heder__nav-right">
           <li>
             <Link to="/profile">
-              <HiOutlineShoppingCart fontSize="25px" />
+              <HiOutlineShoppingCart fontSize="1,4rem" />
               <div style={{ color: "blue" }}>{cart.length}</div>
             </Link>
           </li>
           <li>
             <Link to="/form">
-              <GrLogin fontSize="25px" />
+              <GrLogin fontSize="1,4rem" />
             </Link>
           </li>
         </div>

@@ -2,12 +2,12 @@ import React from "react";
 import "./Products.css";
 import { CartState } from "../../context/Context";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
-import SingleProductModal from "../../Components/SingleProduct/SingleProductsModal";
+import Modal from "../../Components/Portal/Modal";
 import Filter from "../../Components/Filter/Filter";
 
-const Products = ({ prod }) => {
+const Products = () => {
   const {
-    productState: { sort, Asceding, byfastDeliver },
+    productState: { sort, byfastDeliver },
     state: { products },
     state,
     productState,
@@ -23,13 +23,14 @@ const Products = ({ prod }) => {
     if (byfastDeliver) {
       sortedtProdusct = sortedtProdusct.filter((prod) => prod.fast);
     }
-    if (productState.search.length > 3) {
-      sortedtProdusct = sortedtProdusct.filter(
-        (prod) => prod.name1 === productState.search
+    if (productState.search) {
+      sortedtProdusct = sortedtProdusct.filter((prod) =>
+        prod.name1.includes(productState.search)
       );
     }
     return sortedtProdusct;
   };
+
   return (
     <>
       <div className="home-prod">
@@ -46,7 +47,7 @@ const Products = ({ prod }) => {
         </div>
         <div>
           {state.modal.map((prod) => (
-            <SingleProductModal prod={prod} key={prod.id} />
+            <Modal prod={prod} key={prod.id} />
           ))}
         </div>
       </div>

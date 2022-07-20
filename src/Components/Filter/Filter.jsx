@@ -1,41 +1,37 @@
 import React from "react";
+import "./Filter.scss";
 import { CartState } from "../../context/Context";
-import "./Filter.css";
 import { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-function Filter() {
+const Filter = () => {
   const {
-    productState: { sort, Asceding, byfastDeliver },
+    productState: { sort, byfastDeliver },
     productDispatch,
   } = CartState();
 
   const [search, setSearch] = useState("");
   const handlerSearch = (e) => {
     setSearch(e.target.value);
+    productDispatch({ type: "SEARCH", payload: e.target.value });
   };
 
-  const handlerSubmit = (e) => {
-    e.preventDefault();
-    productDispatch({ type: "SEARCH", payload: search });
-    setSearch("");
-  };
   return (
-    <div className="filter-main">
-      <form onSubmit={handlerSubmit} className="form">
+    <div className="filter">
+      <div className="filter__input_search ">
         <input
-          className="input-search"
+          className="filter__input_search__filter"
           type="text"
           placeholder="search..."
           value={search}
           onChange={handlerSearch}
         />
-        {/* <button className="btn-search">
+        <button className="filter__btn-search">
           <BiSearchAlt2 />{" "}
-        </button> */}
-      </form>
-      <div className="main-down">
-        <span className="sort-up">
+        </button>
+      </div>
+      <div className="filter__sort">
+        <span className="filter__sort-up">
           <input
             type="checkbox"
             name="group1"
@@ -49,7 +45,7 @@ function Filter() {
           ></input>
           <label> Ascending</label>
         </span>
-        <span className="sort-up">
+        <span className="filter__sort-up">
           <input
             type="checkbox"
             id={"inline-2"}
@@ -79,7 +75,7 @@ function Filter() {
 
         <span>
           <button
-            className="button-clear"
+            className="filter__button-clear"
             onClick={() =>
               productDispatch({
                 type: "clear",
@@ -92,6 +88,6 @@ function Filter() {
       </div>
     </div>
   );
-}
+};
 
 export default Filter;

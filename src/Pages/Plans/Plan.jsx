@@ -28,24 +28,22 @@ const Plany = () => {
           <h3>Sprawdź co zyskujesz !</h3>
         </div>
 
-        <div className="plans-main">
-          <div className="plan running" onClick={() => setIsOpenRun(true)}>
+        <div className="plans-main" onClick={() => setIsOpenRun(true)}>
+          <div className="plan running">
             <BiRun className="icon" />
             Plan Biegania
           </div>
 
-          <div className="plan gym">
-            <CgGym
-              className="icon"
-              // onClick={() => setIsOpen(true)}
-            />
-            <Link to="/plantreningowy/silownia">Plan siłowni</Link>
-          </div>
+          <Link to="/plantreningowy/silownia" className="plan gym">
+            <CgGym className="icon" />
+            Plan Siłowni
+          </Link>
 
-          <div className="plan diet">
+          <Link to="/plantreningowy/dieta" className="plan diet">
             <TbHeartHandshake className="icon" />
-            <Link to="/plantreningowy/dieta">Plan Dietetyczny</Link>
-          </div>
+            Plan Dietetyczny
+            {/* <Link to="/plantreningowy/dieta">Plan Dietetyczny</Link> */}
+          </Link>
 
           <div className="plan joga">
             {" "}

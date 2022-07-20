@@ -1,0 +1,44 @@
+@use "./variables.scss" as *;
+
+%btn {
+  width: 6rem;
+  margin: 0 0.4rem;
+  height: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  &:active {
+    border: none;
+  }
+}
+.primery-button {
+  @extend %btn;
+  background-color: $primery-color;
+  color: $forth-color;
+  &:hover,
+  &:active {
+    background-color: $secendary-color;
+    color: $third-color;
+  }
+}
+
+.second-button {
+  @extend %btn;
+  background-color: $secendary-color;
+  color: $third-color;
+  &:hover,
+  &:active {
+    background-color: $primery-color;
+    color: $forth-color;
+  }
+}
+.third-button {
+  @extend %btn;
+  background-color: $primery-color;
+  color: $forth-color;
+  &:hover,
+  &:active {
+    background-color: $secendary-color;
+    color: $third-color;
+  }
+}

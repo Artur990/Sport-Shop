@@ -1,0 +1,46 @@
+@use "../.././Components/scss/-butons.scss";
+@use "../.././Components/scss/variables.scss";
+.products-cart {
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  margin: 0px;
+  border-style: ridge;
+  border-radius: 14px;
+  background-color: rgb(134, 197, 243);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__img {
+    width: 150px;
+    height: 160px;
+    padding: 20px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 1rem;
+    &__number {
+      width: 60px;
+      height: 20px;
+      padding: 1rem;
+    }
+  }
+  &__buttons {
+    display: flex;
+    /* justify-content: space-around; */
+    justify-items: center;
+    align-items: center;
+  }
+  &__button {
+    @extend .primery-button;
+  }
+}

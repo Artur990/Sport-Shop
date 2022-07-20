@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { CartState } from "../../../context/Context";
-import "./Diet.css";
+import "./Diet.scss";
 import DietSingle from "./DietSingle";
 import DietAdd from "./DietAdd";
-// import { allFoodCategories } from "../../../data/food";
-// import { setSelectionRange } from "@testing-library/user-event/dist/utils";
-
 const Dieta = () => {
   const { food } = CartState();
 
-  const [fitresCategories, setFiltersCategories] = useState([]);
+  const [fitresCategories, setFiltersCategories] = useState(
+    food.foods[0].foods
+  );
 
   const [total, setTotal] = useState();
 
@@ -21,23 +20,22 @@ const Dieta = () => {
     setTotal(totalCount);
   }, [food.foodCart]);
 
-  console.log(food.foodCart);
   const handleFoodType = (type) => {
     setFiltersCategories(type);
   };
 
   return (
     <>
-      <h1 className="title-dieta">
+      <h1 className="diet-main__title">
         Sprawdź ile kalorii zjadasz podczas dnia , dodają produkty w
         kalkulatorze
       </h1>
-      <div className="main-dieta">
-        <div className="btn-and-product">
-          <div className="btn-diet">
+      <div className="diet-main">
+        <div className="diet-main__first-column">
+          <div className="diet-main__btn-sort">
             {food.foods.map((f) => (
               <button
-                className="btn"
+                className="diet-main__btn-of-products"
                 kay={f.id}
                 onClick={() => handleFoodType(f.foods.map((f) => f))}
               >
@@ -45,33 +43,34 @@ const Dieta = () => {
               </button>
             ))}
           </div>
-          <div className="product-diet">
+          <div>
             {fitresCategories.map((prod) => (
               <DietSingle
                 key={prod.id}
                 id={prod.id}
                 prod={prod.name}
                 kcal={prod.kcal}
+                isOpen={prod.isOpen}
               >
                 {prod.name}
               </DietSingle>
             ))}
           </div>
         </div>
-        <div className="calculate-main">
+        <div className="diet-main__calculate-column">
           {food.foodCart.map((prod) => (
             <DietAdd prod={prod.prod} key={prod.id} id={prod.id} />
           ))}
         </div>
 
-        <div className="totals">
+        <div className="diet-main__total-column">
           <h2>Total Kalori {total}</h2>
           <h2>Ilość produktów {food.foodCart.length}</h2>
         </div>
       </div>
 
-      <div className="secend-main-dieta">
-        <div className="dieta">
+      <div className="diet-secend">
+        <div className="diet-secend__column">
           <h2>Czym kierować się przy wyborze diety odchudzającej?</h2>
           <p>
             Dieta redukcyjna musi być odpowiednio dopasowana do naszego stylu
@@ -96,7 +95,7 @@ const Dieta = () => {
             osób, które miały okazję skorzystać z diety.
           </p>
         </div>
-        <div className="dieta">
+        <div className="diet-secend__column">
           <h2>
             Czy warto wybrać się do dietetyka aby zaplanować odpowiednią dietę?
           </h2>
@@ -118,7 +117,7 @@ const Dieta = () => {
             żywieniowych.
           </p>
         </div>
-        <div className="dieta">
+        <div className="diet-secend__column">
           <h2>Najpopularniejsze diety odchudzające</h2>
           <p>
             Bardzo powszechnie stosowaną dietą jest dieta śródziemnomorska,
@@ -140,7 +139,7 @@ const Dieta = () => {
             wybierać zdrowe składniki.
           </p>
         </div>
-        <div className="dieta">
+        <div className="diet-secend__column">
           <h2>Diety prozdrowotne</h2>
           <p>
             Dieta odchudzająca, której zadaniem jest przeciwdziałanie chorobom
@@ -166,91 +165,3 @@ const Dieta = () => {
 };
 
 export default Dieta;
-
-// useEffect(() => {
-//     getPopular();
-//   }, []);
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       "X-RapidAPI-Key": "ee11faf41cmsh4e8a249abd4b37ap1c8561jsn247ed39cf3ad",
-//       "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-//     },
-//   };
-//   const key = "ee11faf41cmsh4e8a249abd4b37ap1c8561jsn247ed39cf3ad";
-//   const getPopular = async () => {
-//     const api = await fetch(
-//       `https://api.spoonacular.com/recipes/random   ?apiKey=400f15a8be104a84aa27874e6c6e39f4`
-//     );
-
-//     const data = await api.json();
-//     setFood(data);
-//     console.log(data);
-//   };
-
-{
-  /* Dieta
-        {food.results.map((data1) => {
-          return (
-            <div key={data1.id}>
-              <h2>{data1.title}</h2>
-              <img src={data1.image} alt={data1.id}></img>
-              <div>Kalorie: {data1.calorie}</div>
-            </div>
-          );
-        })} */
-}
-
-{
-  /* <div className="products">
-<h1 className="products-title">Produkty</h1>
-<h2>Sniadania</h2>
-<select name="lista" multiple="multiple" size="4">
-  <option>Kanapka</option>
-  <option>baton</option>
-  <option>mrozona kawa z lodami</option>
-  <option>kawa z ciastkiem</option>
-  <option>jejecznica z boczkime</option>
-  <option>owsianka</option>
-  <option>warzywa</option>
-  <option>sok pomarańczowy</option>
-  <option>gotowana kiełbada</option>
-</select>
-<h2>obiad</h2>
-<select name="lista" multiple="multiple" size="4">
-  <option>chabowy po staropolsku</option>
-  <option>burger</option>
-  <option>pieczony kurczak z ziemiakami</option>
-  <option>karkówka</option>
-  <option>boritto</option>
-  <option>kebab</option>
-  <option>pizza</option>
-  <option>sushi</option>
-  <option>gotowana kiełbada</option>
-</select>
-<h2>kolacja</h2>
-<select name="lista" multiple="multiple" size="4">
-  <option>chabowy po staropolsku</option>
-  <option>burger</option>
-  <option>pieczony kurczak z ziemiakami</option>
-  <option>karkówka</option>
-  <option>boritto</option>
-  <option>kebab</option>
-  <option>pizza</option>
-  <option>sushi</option>
-  <option>gotowana kiełbada</option>
-</select>
-<h2>przekąski</h2>
-<select name="lista" multiple="multiple" size="4">
-  <option>lody</option>
-  <option>baton</option>
-  <option>chipsy</option>
-  <option>orzeczki</option>
-  <option>piwo</option>
-  <option>drink</option>
-  <option>słodka lemoniada</option>
-  <option>czekolada</option>
-  <option>Pączek</option>
-</select>
-</div> */
-}

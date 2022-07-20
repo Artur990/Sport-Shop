@@ -1,0 +1,64 @@
+@use "../../../Components/scss/-butons.scss";
+// .title-dieta {
+//   display: flex;
+//   align-items: center;
+//   text-align: center;
+// }
+.diet-main {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px;
+  &__title {
+    text-align: center;
+  }
+  &__first-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn-of-product {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn-sort {
+    display: flex;
+    width: 35%;
+  }
+
+  &__btn-of-products {
+    @extend .primery-button;
+    margin: 0;
+    width: 80px;
+    height: 40px;
+  }
+
+  &__calculate-column {
+    width: 40%;
+    height: 650px;
+    max-width: 650px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    background-color: rgb(255, 253, 253);
+    border-left: solid 1px;
+    border-right: solid 1px;
+  }
+}
+
+.diet-secend {
+  width: 100%;
+  border-bottom: 5px black;
+  height: 1000px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  &__column {
+    text-align: center;
+  }
+}
+.totals {
+  display: flex;
+  flex-direction: column;
+}

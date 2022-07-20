@@ -11,7 +11,7 @@ import Gym from "./Pages/Plans/Gym/Gym";
 import Diet from "./Pages/Plans/Diets/Diet.jsx";
 import Form from "./Pages/Form/Form";
 import "./App.css";
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Header />
@@ -35,6 +35,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
