@@ -6,24 +6,57 @@ import {
   BsTwitter,
   BsTelephoneInbound,
 } from "react-icons/bs";
+import Button from "../../Components/button/button";
 
 import { AiOutlineMail, AiFillStar } from "react-icons/ai";
-import { FaAddressCard } from "react-icons/fa";
+import { FaAddressCard, FaThemeco } from "react-icons/fa";
 
 import image1 from "../../assets/images/img1.jpg";
 import image2 from "../../assets/images/img2.webp";
 import image3 from "../../assets/images/img3.webp";
 import image4 from "../../assets/images/img4.webp";
 import Baner from "../../Components/baner/Baner";
-
+import { Cont } from "../../context/ContextTwo";
 import "./Home.scss";
+
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Home = () => {
   const obj = [image1, image2, image3, image4];
   let iconStyles = { color: "green", fontSize: "1.5em" };
+
+  const [sety, setSety] = useState(false);
+  const setFalse = () => {
+    setSety(false);
+  };
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "ee11faf41cmsh4e8a249abd4b37ap1c8561jsn247ed39cf3ad",
+      "X-RapidAPI-Host": "sportscore1.p.rapidapi.com",
+    },
+  };
+
+  const getDate = async () => {
+    const date = await fetch(
+      "https://sportscore1.p.rapidapi.com/sports",
+      options
+    );
+    const jj = await date.json();
+    console.log(jj);
+  };
+
+  useEffect(() => {
+    getDate();
+  }, []);
   return (
     <>
-      <Baner photos={obj} />
+      <div className="baner-home">
+        <Baner className="baner-home1" photos={obj} />
+      </div>
+
+      <div></div>
       <div className="home-main__foot">
         <div className="home-main__foot__column">
           <h2>Kontakt: </h2>
@@ -42,7 +75,7 @@ const Home = () => {
             </li>
           </ul>
         </div>
-
+        <button ocClick={() => getDate()}></button>
         <div className="home-main__foot__column">
           <h2> Korzyści dla klubowiczów: </h2>
           <ul className="home-main__foot__column__list">
@@ -76,6 +109,12 @@ const Home = () => {
             <li className="home-main__foot__column__lists">
               <BsTwitter className="icon-food" />
               Twitter
+            </li>
+            <li>
+              <div>{sety && <div>siema</div>} </div>
+              <Button class={"btn"} onClick={setSety} label={"BTN"} />
+              <Button class={"btn1"} onClick={setFalse} label={"Btn1"} />
+              <Button class={"btn2"} label={"Btn2"} />
             </li>
           </ul>
         </div>

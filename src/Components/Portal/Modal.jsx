@@ -1,6 +1,7 @@
 import React from "react";
-import { CartState } from "../../context/Context";
 import "./Modal.scss";
+import Button from "../button/button";
+import { CartState } from "../../context/Context";
 import { FaShippingFast } from "react-icons/fa";
 
 const Modal = ({ prod, cart }) => {
@@ -9,14 +10,16 @@ const Modal = ({ prod, cart }) => {
   const handleClickRemove = () => {
     dispatch({ type: "REMOVE_FROM_MODAL", payload: prod });
   };
-  // const handleAddCart = () => {
-  //   dispatch({ type: "ADD_TO_CARD", payload: { ...prod } });
-  //   // dispatch({
-  //   //   type: "REMOVE_BUTTON",
-  //   //   payload: { id: prod.id, isOpen: true },
-  //   // });
-  // };
-  // console.log(prod);
+
+  const handleClickAdd = () => {
+    // e.preventDefault();
+    dispatch({ type: "ADD_TO_CARD", payload: { ...prod } });
+    dispatch({
+      type: "REMOVE_BUTTON",
+      payload: { id: prod.id, isOpen: true },
+    });
+  };
+  console.log(prod);
 
   // const addModal = (e) => {
   //   dispatch({ type: "ADD_TO_MODAL", payload: { ...prod } });
@@ -49,6 +52,13 @@ const Modal = ({ prod, cart }) => {
             >
               Zamknij
             </button>
+            {prod.isOpen ? (
+              <div>dodany</div>
+            ) : (
+              <Button class="second-button" onClick={() => handleClickAdd()}>
+                Dodaj
+              </Button>
+            )}
           </spam>
         </div>
       </div>

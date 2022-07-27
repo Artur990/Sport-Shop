@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import { CartState } from "../../context/Context";
 
 import "./SingleProductCart.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { REMOVE_FROM_CARD, ADD_QTY } from "../../features/shopSlice";
 
 const SingleProductCart = ({ prod }) => {
-  const { dispatch, cart } = CartState();
-  console.log(cart);
+  // const { dispatch, cart } = CartState();
+  const dispatch1 = useDispatch();
+
+  // console.log(cart);
   const handleClickRemove = () => {
-    dispatch({
-      type: "REMOVE_FROM_CARD",
-      payload1: prod,
-      payload: { id: prod.id, isOpen: false },
-    });
+    dispatch1(REMOVE_FROM_CARD(prod));
+
+    // dispatch({
+    //   type: "REMOVE_FROM_CARD",
+    //   // payload1: prod,
+    //   payload: { id: prod.id, isOpen: false },
+    // });
   };
 
-  const [value, setValue] = useState(0);
   const onChangeValue = (e) => {
-    dispatch({
-      type: "ADD_QTY",
-      payload: { id: prod.id, qty: e.target.value },
-    });
+    dispatch1(ADD_QTY({ id: prod.id, qty: e.target.value }));
+    //     {
+    //     type: "ADD_QTY",
+    //     payload: { id: prod.id, qty: e.target.value },
+    //   });
   };
 
   return (

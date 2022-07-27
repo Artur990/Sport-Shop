@@ -18,13 +18,16 @@
   background-color: rgb(255, 255, 255);
   &__title {
     text-align: center;
+    cursor: pointer;
   }
   &__img {
     width: 200px;
     height: 200px;
+    cursor: pointer;
   }
   &__deliver {
     display: flex;
+    cursor: pointer;
   }
   &__icon-deliver {
     width: 2rem;

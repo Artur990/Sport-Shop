@@ -3,8 +3,16 @@ import "./Filter.scss";
 import { CartState } from "../../context/Context";
 import { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
-
+import Button from "../button/button";
+import {
+  SORT_BY_PRICE,
+  SORT_BY_FAST_DELIVER,
+  SEARCH,
+  CLEAR,
+} from "../../features/filterSlice";
+import { useSelector, useDispatch } from "react-redux";
 const Filter = () => {
+  const dispatch = useDispatch();
   const {
     productState: { sort, byfastDeliver },
     productDispatch,
@@ -13,7 +21,8 @@ const Filter = () => {
   const [search, setSearch] = useState("");
   const handlerSearch = (e) => {
     setSearch(e.target.value);
-    productDispatch({ type: "SEARCH", payload: e.target.value });
+    dispatch(SEARCH({ payload: search }));
+    // productDispatch({ type: "SEARCH", payload: search.toLowerCase() });
   };
 
   return (
@@ -74,16 +83,9 @@ const Filter = () => {
         </span>
 
         <span>
-          <button
-            className="filter__button-clear"
-            onClick={() =>
-              productDispatch({
-                type: "clear",
-              })
-            }
-          >
+          <Button class="third-button" onClick={() => dispatch(CLEAR())}>
             Clear Filters
-          </button>
+          </Button>
         </span>
       </div>
     </div>

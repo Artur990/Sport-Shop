@@ -1,8 +1,8 @@
 import { foods } from "../data/food";
 
-const klucze = {
-  ADD: "ADDTOCARD",
-};
+// const klucze = {
+//   ADD: "ADDTOCARD",
+// };
 
 export const cartReducer = (state, action) => {
   if (action.type === "ADD_TO_CARD") {
@@ -11,6 +11,9 @@ export const cartReducer = (state, action) => {
       cart: [...state.cart, { ...action.payload, qty: 1 }],
     };
   }
+
+  // -----  VVVVVV
+
   if (action.type === "REMOVE_BUTTON") {
     return {
       ...state,
@@ -22,6 +25,7 @@ export const cartReducer = (state, action) => {
       ...state,
     };
   }
+  // -------------------------YYY
 
   if (action.type === "ADD_TO_MODAL") {
     return {
@@ -29,6 +33,7 @@ export const cartReducer = (state, action) => {
       modal: [...state.cart, { ...action.payload, qty: 1 }],
     };
   }
+
   if (action.type === "REMOVE_FROM_MODAL") {
     return {
       ...state,

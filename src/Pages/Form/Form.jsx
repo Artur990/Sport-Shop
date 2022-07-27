@@ -53,12 +53,7 @@ function Form() {
     if (!formIsValid) {
       return;
     }
-    console.log(
-      enteredName,
-      enteredLastName,
-      enteredEmail,
-      enteredPasswordIsValid
-    );
+    console.log(enteredName, enteredLastName, enteredEmail, enteredPassword);
     restNameInput();
     restLastNameInput();
     restEmailInput();

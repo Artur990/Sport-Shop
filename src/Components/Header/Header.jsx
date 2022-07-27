@@ -5,7 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 // import AiFillHome from "react-icons/Ai";
 import { CartState } from "../../context/Context";
 import { GrLogin } from "react-icons/gr";
-
+import { useSelector } from "react-redux";
 import "./Header.scss";
 
 // import { FaSchoppingCart } from "react-icons/fa";
@@ -13,10 +13,11 @@ const Header = () => {
   // const StyledItem = styled(DropdownMenu.Item, {
   //   "&[data-disabled]": { color: "gainsboro" },
   // });
-  const {
-    empty,
-    state: { cart },
-  } = CartState();
+  const count = useSelector((state) => state.shop.cart);
+  // const {
+  //   empty,
+  //   state: { cart },
+  // } = CartState();
   return (
     <div className="heder">
       <ul className="heder__nav">
@@ -48,7 +49,7 @@ const Header = () => {
           <li>
             <Link to="/profile">
               <HiOutlineShoppingCart fontSize="1,4rem" />
-              <div style={{ color: "blue" }}>{cart.length}</div>
+              <div style={{ color: "blue" }}>{count.length}</div>
             </Link>
           </li>
           <li>

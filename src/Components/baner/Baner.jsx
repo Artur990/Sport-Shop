@@ -25,20 +25,20 @@ function Baner({ photos }) {
 
   return (
     <div className="baner">
-      <div className="baner__arrow-left">
-        <BsFillArrowLeftCircleFill
-          className="baner__arrow-left1"
-          onClick={() => changeNext()}
-        />
-      </div>
-
+      {/* <div className="baner__arrow-left"> */}
+      <BsFillArrowLeftCircleFill
+        className="baner__arrow-left1"
+        onClick={() => changeNext()}
+      />
+      {/* MdOutlineArrowBackIos */}
+      {/* </div> */}
       <img className="baner__img" src={photos[index]} alt="22" />
-      <div className="baner__arrow-right">
-        <BsFillArrowRightCircleFill
-          className="baner__arrow-right1"
-          onClick={() => changePrevious()}
-        />
-      </div>
+      {/* <div className="baner__arrow-right"> */}
+      <BsFillArrowRightCircleFill
+        className="baner__arrow-right1"
+        onClick={() => changePrevious()}
+      />
+      {/* </div> */}
     </div>
   );
 }

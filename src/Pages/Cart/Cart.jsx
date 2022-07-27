@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from "react";
-
-import { CartState } from "../../context/Context";
+// import { CartState } from "../../context/Context";
 import "./Cart.scss";
 import SingleProductCart from "./SingleProductCart";
 import { CgDollar } from "react-icons/cg";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-
+import { useSelector } from "react-redux";
 const Profile = () => {
-  const {
-    state: { cart },
-  } = CartState();
+  const count = useSelector((state) => state.shop.cart);
 
   const [total, setTotal] = useState();
 
   useEffect(() => {
-    const totalCount = cart.reduce(
+    const totalCount = count.reduce(
       (acc, cur) => acc + Number(cur.price) * Number(cur.qty),
       0
     );
     setTotal(totalCount);
-  }, [cart]);
+  }, [count]);
 
+  useEffect(() => {}, [count]);
   return (
     <>
       <div className="main-cart">
         <div className="main-cart__products">
-          {cart.length ? (
+          {count.length ? (
             <span className="produscts-container-cart">
-              {cart.map((prod) => (
+              {count.map((prod) => (
                 <SingleProductCart prod={prod} key={prod.id} />
               ))}
             </span>
@@ -40,7 +38,7 @@ const Profile = () => {
             SubTotal: {total} <CgDollar />
           </h3>
           <h3>
-            Total {cart.length} <MdOutlineProductionQuantityLimits />
+            Total {count.length} <MdOutlineProductionQuantityLimits />
           </h3>
           <button className="primery-button">Zamów </button>
         </div>
