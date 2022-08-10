@@ -1,20 +1,21 @@
-@use "../.././Components/scss/-butons.scss";
+@use "../.././Components/scss/_butons.scss";
 @use "../.././Components/scss/variables.scss";
 .products-cart {
-  width: 100%;
-  height: 200px;
+  width: 98%;
+  height: 12rem;
   padding: 0px;
   margin: 0px;
-  border-style: ridge;
+  // border-style: ridge;
   border-radius: 14px;
-  background-color: rgb(134, 197, 243);
+  background-color: rgb(253, 254, 255);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid #e6e6e6;
   &__img {
-    width: 150px;
-    height: 160px;
-    padding: 20px;
+    width: 10rem;
+    height: 10rem;
+    padding: 2rem;
   }
   &__description {
     display: flex;
@@ -28,12 +29,13 @@
     align-items: center;
     justify-items: center;
     margin: 1rem;
-    &__number {
-      width: 60px;
-      height: 20px;
-      padding: 1rem;
-    }
   }
+  &__number {
+    width: 3rem;
+    // height: 20px;
+    // padding: 1rem;
+  }
+
   &__buttons {
     display: flex;
     /* justify-content: space-around; */
@@ -42,5 +44,112 @@
   }
   &__button {
     @extend .primery-button;
+    width: 80%;
+    width: 3rem;
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 5px;
+    border-bottom: solid 1px;
+  }
+  .btn-minus {
+    background-image: none;
+    background: #fae7e7;
+    border: 1px solid #fae7e7;
+    color: #d10b10;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-weight: 700;
+    margin: 0;
+
+    // font-size: 1.6rem;
+    // line-height: 3.2rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .btn-plus {
+    background-image: none;
+    background: #fae7e7;
+    border: 1px solid #fae7e7;
+    color: #d10b10;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-weight: 700;
+    margin: 0;
+
+    // font-size: 1.6rem;
+    // line-height: 3.2rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .input-btn {
+    display: flex;
+  }
+}
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+@media screen and (max-width: 780px) {
+  .input-btn {
+    display: flex;
+  }
+  .products-cart__button {
+    position: relative;
+    top: 4rem;
+    right: 2rem;
+  }
+  .products-cart__number {
+    border: 2px solid #e6e6e6;
+  }
+  .btn-minus {
+    background-image: none;
+    background: #fae7e7;
+    border: 1px solid #fae7e7;
+    color: #d10b10;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-weight: 700;
+    margin: 0;
+
+    // font-size: 1.6rem;
+    // line-height: 3.2rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .btn-plus {
+    background-image: none;
+    background: #fae7e7;
+    border: 1px solid #fae7e7;
+    color: #d10b10;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-weight: 700;
+    margin: 0;
+
+    // font-size: 1.6rem;
+    // line-height: 3.2rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }

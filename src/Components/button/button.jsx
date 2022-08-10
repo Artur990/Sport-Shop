@@ -3,7 +3,6 @@ import "./button.scss";
 const Button = (props) => {
   return (
     <>
-      <label> {props.label}</label>
       <button
         //   style={{ background: props.class }}
         className={props.class}

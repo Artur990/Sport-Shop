@@ -3,10 +3,9 @@ import {
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
-
 import "./Baner.scss";
 
-function Baner({ photos }) {
+const Baner = ({ photos }) => {
   const [index, setIndex] = useState(0);
   const changeNext = () => {
     if (index !== photos.length - 1) {
@@ -25,22 +24,17 @@ function Baner({ photos }) {
 
   return (
     <div className="baner">
-      {/* <div className="baner__arrow-left"> */}
       <BsFillArrowLeftCircleFill
         className="baner__arrow-left1"
         onClick={() => changeNext()}
       />
-      {/* MdOutlineArrowBackIos */}
-      {/* </div> */}
-      <img className="baner__img" src={photos[index]} alt="22" />
-      {/* <div className="baner__arrow-right"> */}
+      <img className="baner__img" src={photos[index]} alt={photos[index]} />
       <BsFillArrowRightCircleFill
         className="baner__arrow-right1"
         onClick={() => changePrevious()}
       />
-      {/* </div> */}
     </div>
   );
-}
+};
 
 export default Baner;

@@ -2,7 +2,7 @@ import React from "react";
 import "./Run.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-function Run({ setIsOpenRun }) {
+const Run = ({ setIsOpenRun }) => {
   return (
     <div>
       <>
@@ -49,6 +49,6 @@ function Run({ setIsOpenRun }) {
       ,
     </div>
   );
-}
+};
 
 export default Run;

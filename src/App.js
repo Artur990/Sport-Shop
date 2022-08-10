@@ -22,14 +22,14 @@ const App = () => {
           path="/dlaczegoWartoUprawiacSport"
           element={<DlaczegoWartoUprawiacSport />}
         />
-        <Route path="/products" element={<Products />} />
+        <Route path="/sklep" element={<Products />} />
 
         <Route path="plantreningowy" element={<Plany />} />
         <Route path="plantreningowy/bieganie" element={<Gym />} />
         <Route path="plantreningowy/silownia" element={<Gym />} />
         <Route path="plantreningowy/dieta" element={<Diet />} />
 
-        <Route path="profile" element={<Cart />} />
+        <Route path="koszyk" element={<Cart />} />
         <Route path="form" element={<Form />} />
         <Route path="profile/Form" element={<Cart />} />
       </Routes>

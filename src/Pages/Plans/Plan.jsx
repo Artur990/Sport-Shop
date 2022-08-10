@@ -8,7 +8,7 @@ import { TbHeartHandshake } from "react-icons/tb";
 import { GrYoga } from "react-icons/gr";
 import Gym from "./Gym/Gym";
 import Run from "./Run/Run";
-import { Portal } from "./Modal/PortalSilownia";
+// import { Portal } from "./Modal/PortalSilownia";
 
 const Plany = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +16,9 @@ const Plany = () => {
 
   return (
     <>
-      <Portal open={isOpen} setIsOpen={setIsOpen}>
+      {/* <Portal open={isOpen} setIsOpen={setIsOpen}>
         <Gym />
-      </Portal>
+      </Portal> */}
 
       {isOpenRun && <Run setIsOpenRun={setIsOpenRun} />}
 

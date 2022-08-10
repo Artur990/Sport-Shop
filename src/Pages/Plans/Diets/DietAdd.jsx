@@ -11,9 +11,9 @@ const DietaAdd = ({ prod, id }) => {
       payload1: { id: id, isOpen: false },
     });
   };
-
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
   const onChangeValue = (e) => {
+    setValue(e.target.value);
     foodDispatche({
       type: "ADD_QTY",
       payload: { id: id, qty: e.target.value },
@@ -32,7 +32,7 @@ const DietaAdd = ({ prod, id }) => {
           onChange={onChangeValue}
           min="1"
           max="5"
-          placeholder="1"
+          value={value}
         ></input>
       </div>
       <div className="products-added__buttons">

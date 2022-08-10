@@ -1,10 +1,9 @@
-@use "../../Components/scss/-butons.scss";
+@use "../../Components/scss/_butons.scss";
 .form-main {
   width: 100%;
   height: 80vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -12,12 +11,12 @@
   font-family: "Bree Serif", serif;
 
   &__controls {
-    width: 400px;
-    height: 500px;
+    width: 30%;
+    height: 100%;
     background-color: none;
-    -webkit-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
-    -moz-box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
-    box-shadow: 1px 0px 18px 0px rgba(98, 108, 227, 1);
+    -webkit-box-shadow: 1px 0px 18px 0px rgb(247, 162, 145);
+    -moz-box-shadow: 1px 0px 18px 0px rgb(234, 161, 161);
+    box-shadow: 1px 0px 18px 0px rgb(235, 160, 160);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,14 +41,14 @@
     margin-left: 5px;
   }
   &__control input {
-    border-bottom-color: rgb(8, 155, 235);
+    border-bottom-color: rgb(19, 20, 20);
     border-top: none;
     border-left: none;
     border-right: none;
     outline: unset;
   }
   &__input:focus {
-    border-bottom: 3px rgb(57, 117, 166);
+    border-bottom: 3px rgb(166, 57, 57);
   }
 
   &__control input:hover {
@@ -67,3 +66,25 @@
     height: 2rem;
   }
 }
+
+@media (orientation: landscape) and(max-width: 780px) {
+  .form-main {
+    width: 60%;
+    height: 30rem;
+    align-items: center;
+    margin: 0;
+  }
+  .form-main__controls {
+    width: 80%;
+  }
+}
+
+@media (orientation: portrait) {
+  .form-main__controls {
+    width: 350px;
+    height: 700px;
+  }
+}
+// .form-main__controls {
+//   width: 80%;
+// }

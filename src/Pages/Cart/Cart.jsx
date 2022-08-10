@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from "react";
-// import { CartState } from "../../context/Context";
+import { CartState } from "../../context/Context";
 import "./Cart.scss";
 import SingleProductCart from "./SingleProductCart";
-import { CgDollar } from "react-icons/cg";
+import { TbTruckDelivery } from "react-icons/tb";
+
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import { useSelector } from "react-redux";
+
 const Profile = () => {
-  const count = useSelector((state) => state.shop.cart);
-
+  const {
+    state: { cart },
+  } = CartState();
   const [total, setTotal] = useState();
-
+  // console.log(cart[0].qty);
   useEffect(() => {
-    const totalCount = count.reduce(
+    const totalCount = cart.reduce(
       (acc, cur) => acc + Number(cur.price) * Number(cur.qty),
       0
     );
     setTotal(totalCount);
-  }, [count]);
+  }, [cart]);
 
-  useEffect(() => {}, [count]);
   return (
     <>
+      {" "}
+      <h1 className="main-cart__title">TWÓJ KOSZYK ({cart.length} PRODUKT)</h1>
+      <h2 className="main-cart__title">Produkt</h2>
       <div className="main-cart">
         <div className="main-cart__products">
-          {count.length ? (
-            <span className="produscts-container-cart">
-              {count.map((prod) => (
+          {cart.length ? (
+            <span>
+              {cart.map((prod) => (
                 <SingleProductCart prod={prod} key={prod.id} />
               ))}
             </span>
@@ -35,12 +39,14 @@ const Profile = () => {
         </div>
         <div className="main-cart__filter">
           <h3>
-            SubTotal: {total} <CgDollar />
+            <TbTruckDelivery /> Czas wysyłki do 24H w dni robocze
           </h3>
           <h3>
-            Total {count.length} <MdOutlineProductionQuantityLimits />
+            {/* Total {cart.length} */}
+            Łączna Kwota {total}
+            <MdOutlineProductionQuantityLimits />
           </h3>
-          <button className="primery-button">Zamów </button>
+          <button className="main-cart__button">Przejdź do kasy </button>
         </div>
       </div>
     </>

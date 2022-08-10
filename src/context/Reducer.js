@@ -1,9 +1,5 @@
 import { foods } from "../data/food";
 
-// const klucze = {
-//   ADD: "ADDTOCARD",
-// };
-
 export const cartReducer = (state, action) => {
   if (action.type === "ADD_TO_CARD") {
     return {
@@ -12,12 +8,10 @@ export const cartReducer = (state, action) => {
     };
   }
 
-  // -----  VVVVVV
-
   if (action.type === "REMOVE_BUTTON") {
     return {
       ...state,
-      products: state.products.filter((e) =>
+      products: state.products.map((e) =>
         e.id === action.payload.id
           ? (e.isOpen = action.payload.isOpen)
           : e.isOpen
@@ -25,7 +19,6 @@ export const cartReducer = (state, action) => {
       ...state,
     };
   }
-  // -------------------------YYY
 
   if (action.type === "ADD_TO_MODAL") {
     return {
@@ -43,7 +36,6 @@ export const cartReducer = (state, action) => {
 
   if (action.type === "REMOVE_FROM_CARD") {
     return {
-      ...state,
       products: state.products.filter((e) =>
         e.id === action.payload.id
           ? (e.isOpen = action.payload.isOpen)
@@ -56,10 +48,14 @@ export const cartReducer = (state, action) => {
   if (action.type === "ADD_QTY") {
     return {
       ...state,
-
       cart: state.cart.filter((e) =>
         e.id === action.payload.id ? (e.qty = action.payload.qty) : e.qty
       ),
+      // ...state,
+      // products: state.products.filter((e) =>
+      //   e.id === action.payload.id ? (e.isOpen = false) : e.isOpen
+      // ),
+      // ...state,
     };
   }
   return state;

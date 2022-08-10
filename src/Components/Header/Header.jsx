@@ -1,64 +1,104 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { HiOutlineShoppingCart, HiMenu } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
-// import AiFillHome from "react-icons/Ai";
-import { CartState } from "../../context/Context";
 import { GrLogin } from "react-icons/gr";
-import { useSelector } from "react-redux";
-import "./Header.scss";
 
-// import { FaSchoppingCart } from "react-icons/fa";
+import { CartState } from "../../context/Context";
+import "./Header.scss";
 const Header = () => {
-  // const StyledItem = styled(DropdownMenu.Item, {
-  //   "&[data-disabled]": { color: "gainsboro" },
-  // });
-  const count = useSelector((state) => state.shop.cart);
-  // const {
-  //   empty,
-  //   state: { cart },
-  // } = CartState();
+  const [isOpen, setIsOpen] = useState(false);
+  const {
+    state: { cart },
+  } = CartState();
+  console.log(cart);
   return (
     <div className="heder">
-      <ul className="heder__nav">
-        <div className="heder__nav-left">
-          <li>
-            <Link to="/">
-              <h2 className="heder__title-sklep">Lubimy sport</h2>
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <AiOutlineHome className="heder__icon-heder" />
-            </Link>
-          </li>
+      {/* <ul className="heder__nav"> */}
 
-          <li>
-            <Link to="/products">Produkty</Link>
-          </li>
-          <li>
-            <Link to="/dlaczegoWartoUprawiacSport">
-              Dlaczego warto uprawiać sport
-            </Link>
-          </li>
-          <li>
-            <Link to="/planTreningowy">Plany Treningowe</Link>
-          </li>
-        </div>
-        <div className="heder__nav-right">
-          <li>
-            <Link to="/profile">
-              <HiOutlineShoppingCart fontSize="1,4rem" />
-              <div style={{ color: "blue" }}>{count.length}</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/form">
-              <GrLogin fontSize="1,4rem" />
-            </Link>
-          </li>
-        </div>
+      <ul className="heder__nav-left">
+        <li>
+          <Link to="/">
+            <h2 className="heder__title-sklep">Lubimy sport</h2>
+          </Link>
+        </li>
+        <li>
+          <Link to="/">
+            <AiOutlineHome className="heder__icon-heder" />
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/sklep">Sklep</Link>
+        </li>
+        <li>
+          <Link to="/dlaczegoWartoUprawiacSport">
+            Dlaczego warto uprawiać sport
+          </Link>
+        </li>
       </ul>
+      <ul className="heder__nav-right">
+        <li>
+          <Link to="/koszyk">
+            <HiOutlineShoppingCart fontSize="1,4rem" />
+            <div style={{ color: "red" }} className="icon-cart">
+              {cart.length}
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link to="/form">
+            <GrLogin fontSize="1,4rem" />
+          </Link>
+        </li>
+        {/* </ul> */}
+      </ul>
+      <div className="navBar-mobile">
+        <div>
+          <Link to="/">
+            <h2 className="heder__title-sklep">Lubimy sport</h2>
+          </Link>
+        </div>
+        <div>
+          <Link to="/form">
+            <GrLogin className="nav-Bar-icon" />
+          </Link>
+        </div>
+        <div onClick={() => setIsOpen(!isOpen)}>
+          <HiMenu className="nav-Bar-icon" />
+        </div>
+        {isOpen && (
+          <div className="nav-bar" onClick={() => setIsOpen(!isOpen)}>
+            <div className="nav-bav-floadMenu">
+              <div className="nav-bav-floadMenu__contnet">
+                <Link to="/">Strona Główna</Link>
+              </div>
+              <div className="nav-bav-floadMenu__contnet">
+                <Link to="/sklep">Sklep</Link>
+              </div>
+              <div className="nav-bav-floadMenu__contnet">
+                <Link to="/dlaczegoWartoUprawiacSport">
+                  Dlaczego warto uprawiać sport
+                </Link>
+              </div>
+              {/* <div className="nav-bav-floadMenu__contnet">
+                <Link to="/planTreningowy">Plany Treningowe</Link>
+              </div> */}
+              <div className="nav-bav-floadMenu__contnet">
+                <Link to="/koszyk">
+                  Koszyk
+                  <div
+                    className="nav-bav-floadMenu__contnet"
+                    style={{ color: "rgba(236, 77, 77)" }}
+                  >
+                    (liczba produktów:{cart.length})
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

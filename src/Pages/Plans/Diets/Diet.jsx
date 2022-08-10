@@ -57,6 +57,10 @@ const Dieta = () => {
             ))}
           </div>
         </div>
+        <div className="diet-main__total-column-mobile">
+          <h2>SUMA KALORI {total}</h2>
+          <h2>ILOŚĆ PRODUKTÓW {food.foodCart.length}</h2>
+        </div>
         <div className="diet-main__calculate-column">
           {food.foodCart.map((prod) => (
             <DietAdd prod={prod.prod} key={prod.id} id={prod.id} />
@@ -64,11 +68,12 @@ const Dieta = () => {
         </div>
 
         <div className="diet-main__total-column">
-          <h2>Total Kalori {total}</h2>
-          <h2>Ilość produktów {food.foodCart.length}</h2>
+          <h2>SUMA KALORI {total}</h2>
+          <h2>ILOŚĆ PRODUKTÓW {food.foodCart.length}</h2>
         </div>
       </div>
 
+      {/* 
       <div className="diet-secend">
         <div className="diet-secend__column">
           <h2>Czym kierować się przy wyborze diety odchudzającej?</h2>
@@ -159,7 +164,7 @@ const Dieta = () => {
             niedoborów.
           </p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

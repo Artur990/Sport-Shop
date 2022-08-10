@@ -1,19 +1,20 @@
-@use "../../../Components/scss/-butons.scss";
-// .title-dieta {
-//   display: flex;
-//   align-items: center;
-//   text-align: center;
-// }
+@use "../../../Components/scss/_butons.scss";
+
 .diet-main {
   display: flex;
   justify-content: space-around;
   margin: 0px;
+  .diet-main__total-column-mobile {
+    display: none;
+  }
   &__title {
     text-align: center;
   }
   &__first-column {
     display: flex;
     flex-direction: column;
+    margin: 1rem, 0;
+    height: auto;
   }
 
   &__btn-of-product {
@@ -48,17 +49,42 @@
   }
 }
 
-.diet-secend {
-  width: 100%;
-  border-bottom: 5px black;
-  height: 1000px;
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  &__column {
-    text-align: center;
+// .diet-secend {
+//   width: 100%;
+//   border-bottom: 5px black;
+//   height: 1000px;
+//   background-color: rgb(255, 255, 255);
+//   padding: 20px;
+//   &__column {
+//     text-align: center;
+//   }
+// }
+// .totals {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+@media screen and (max-width: 780px) {
+  .diet-main {
+    display: flex;
+    flex-direction: column;
+    .diet-main__total-column {
+      display: none;
+    }
+    .diet-main__total-column-mobile {
+      display: flex;
+      border-bottom: solid 1px;
+      border-top: solid 1px;
+      margin: 10px, 10px;
+    }
+    .diet-main__calculate-column {
+      width: 90%;
+      border-left: none;
+      border-right: none;
+    }
+    .diet-main__first-column {
+      margin: 1rem;
+      width: 98%;
+    }
   }
-}
-.totals {
-  display: flex;
-  flex-direction: column;
 }

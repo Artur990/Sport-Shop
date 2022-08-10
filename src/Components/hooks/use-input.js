@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import { useReducer } from "react";
 
 const useInput = (ValidateValue) => {
   const reducer = (state, action) => {
@@ -27,9 +27,6 @@ const useInput = (ValidateValue) => {
     enteredValue: "",
     isTouched: false,
   });
-
-  // const [enteredValue, setEnterdValue] = useState("");
-  // const [isTouched, setIsTouched] = useState(false);
 
   const valueIsValid = state.enteredValue.trim() !== "";
   const hasError = !valueIsValid && state.isTouched;

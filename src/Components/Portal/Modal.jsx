@@ -4,7 +4,7 @@ import Button from "../button/button";
 import { CartState } from "../../context/Context";
 import { FaShippingFast } from "react-icons/fa";
 
-const Modal = ({ prod, cart }) => {
+const Modal = ({ prod }) => {
   const { dispatch } = CartState();
 
   const handleClickRemove = () => {
@@ -12,18 +12,12 @@ const Modal = ({ prod, cart }) => {
   };
 
   const handleClickAdd = () => {
-    // e.preventDefault();
     dispatch({ type: "ADD_TO_CARD", payload: { ...prod } });
     dispatch({
       type: "REMOVE_BUTTON",
       payload: { id: prod.id, isOpen: true },
     });
   };
-  console.log(prod);
-
-  // const addModal = (e) => {
-  //   dispatch({ type: "ADD_TO_MODAL", payload: { ...prod } });
-  // };
 
   return (
     <div className="portal-product">
@@ -33,13 +27,9 @@ const Modal = ({ prod, cart }) => {
             className="portal-product__img-single-product"
             src={prod.image}
             alt={prod.name1}
-            // onClick={() => addModal()}
           />
           <h3 style={{ color: "black" }}>{prod.name1}</h3>
-          <spam
-            className="portal-product__deliver"
-            // onClick={() => addModal()}
-          >
+          <spam className="portal-product__deliver">
             <FaShippingFast className="portal-product__icon-deliver" />{" "}
             {prod.fast ? <div>Fast Deliver</div> : <div>4 days deliver</div>}
           </spam>
@@ -60,6 +50,18 @@ const Modal = ({ prod, cart }) => {
               </Button>
             )}
           </spam>
+          <div>
+            <h2>
+              Damskie rolki, LADY DESQ COOLSLIDE – jak mawiają sport to zdrowie.
+              Dlatego rekreacyjna jazda na rolkach jest topowym sposobem
+              spędzania wolnego czasu
+            </h2>
+            <h3>
+              But posiada konstrukcję typu SOFT. Przednia część cholewki jest
+              miękka, a tylna ma twardy element stabilizujący. Odpowiednie
+              trzymanie kostki zapewnia klamra
+            </h3>
+          </div>
         </div>
       </div>
     </div>

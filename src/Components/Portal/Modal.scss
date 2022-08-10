@@ -1,4 +1,4 @@
-@use "../scss/-butons.scss";
+@use "../scss/_butons.scss";
 @use "../scss/variables.scss";
 
 .portal-product {
@@ -25,37 +25,13 @@
     justify-items: center;
     align-items: center;
   }
-  // .produscts-container {
-  //   display: flex;
-  //   width: 400px;
-  //   padding: 20px;
-  //   flex-wrap: wrap;
-  //   justify-content: space-around;
-  // }
 
-  // .products-line {
-  //   width: 90%;
-  //   padding: 5px;
-  //   margin: 5px;
-  //   border-style: ridge;
-  //   border-radius: 14px;
-  //   box-shadow: 5px gray;
-  //   display: flex;
-  //   align-items: center;
-
-  //   background-color: rgb(141, 141, 141);
-  // }
   &__img-single-product {
     padding-top: 20px;
     width: 400px;
     height: 400px;
   }
-  // .buttons {
-  //   display: flex;
-  //   /* justify-content: space-around; */
-  //   justify-items: center;
-  //   align-items: center;
-  // }
+
   &__button {
     border-radius: 10px;
     width: 85px;
@@ -64,29 +40,6 @@
     color: rgb(2, 2, 2);
     background-color: rgb(108, 118, 252);
   }
-  // .filters {
-  //   background-color: aquamarine(192, 105, 192);
-  //   color: white;
-  //   padding: 40px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 20%;
-  //   height: 86vh;
-  // }
-  // .filters span {
-  //   padding-bottom: 1, 2rem;
-  // }
-  // .filterss {
-  //   padding: 0.6rem;
-  // }
-
-  // .button-clear {
-  //   border-radius: 10px;
-  //   width: 150px;
-  //   height: 40px;
-  //   color: black;
-  //   background-color: rgb(246, 246, 246);
-  // }
 
   &__price-button {
     display: flex;
@@ -110,25 +63,8 @@
   }
 }
 
-// .portal-main {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background-color: rgba(0, 0, 0, 0.765);
-//   z-index: 1000;
-// }
-// .portal {
-//   position: fixed;
-//   top: 5%;
-//   left: 5%;
-//   width: 90%;
-//   background-color: rgb(249, 249, 249);
-//   z-index: 1000;
-//   align-items: center;
-// }
-// .bix {
-//   display: flex;
-//   flex-direction: column;
-// }
+h2,
+h3 {
+  color: rgb(10, 10, 10);
+  text-align: center;
+}

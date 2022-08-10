@@ -42,3 +42,13 @@
     color: $third-color;
   }
 }
+.fourth-button {
+  @extend %btn;
+  background-color: $third-color;
+  color: $forth-color;
+  &:hover,
+  &:active {
+    background-color: $forth-color;
+    color: $third-color;
+  }
+}
