@@ -38,9 +38,12 @@ const Header = () => {
         </li>
       </ul>
       <ul className="heder__nav-right">
-        <li>
+        <li className="heder__nav-right-content">
           <Link to="/koszyk">
-            <HiOutlineShoppingCart fontSize="1,4rem" />
+            <HiOutlineShoppingCart
+              fontSize="1.5rem"
+              style={{ color: "white" }}
+            />
             <div style={{ color: "red" }} className="icon-cart">
               {cart.length}
             </div>
@@ -51,7 +54,6 @@ const Header = () => {
             <GrLogin fontSize="1,4rem" />
           </Link>
         </li>
-        {/* </ul> */}
       </ul>
       <div className="navBar-mobile">
         <div>
@@ -81,9 +83,6 @@ const Header = () => {
                   Dlaczego warto uprawiać sport
                 </Link>
               </div>
-              {/* <div className="nav-bav-floadMenu__contnet">
-                <Link to="/planTreningowy">Plany Treningowe</Link>
-              </div> */}
               <div className="nav-bav-floadMenu__contnet">
                 <Link to="/koszyk">
                   Koszyk

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../../Components/button/button";
-import { GrStatusGood } from "react-icons/gr";
+import { MdGppGood } from "react-icons/md";
 import {
   BsInstagram,
   BsFacebook,
@@ -35,25 +35,31 @@ const Home = () => {
           <h2>Kontakt: </h2>
           <ul className="home-main__foot__column__list">
             <li className="home-main__foot__column__lists">
-              <BsTelephoneInbound
-                className="home-main__icon-food"
-                style={iconStyles}
-              />
-              Telefon: 050-123-211
+              <div className="home-main__foot__icon-foods">
+                <BsTelephoneInbound
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>Telefon: 050-123-211</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              <AiOutlineMail
-                className="home-main__icon-food"
-                style={iconStyles}
-              />
-              Email:lubimySport@adres.com
+              <div className="home-main__foot__icon-foods">
+                <AiOutlineMail
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>Email:lubimySport@adres.com</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              <FaAddressCard
-                className="home-main__icon-food"
-                style={iconStyles}
-              />
-              Adres:Toruń ul. Osiedlowa 17
+              <div className="home-main__foot__icon-foods">
+                <FaAddressCard
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>Adres:Toruń ul. Osiedlowa 17</div>
+              </div>
             </li>
           </ul>
         </div>
@@ -61,23 +67,31 @@ const Home = () => {
           <h2> Korzyści dla klubowiczów: </h2>
           <ul className="home-main__foot__column__list">
             <li className="home-main__foot__column__lists">
-              <GrStatusGood
-                className="home-main__icon-food"
-                style={iconStyles}
-              />
-              10% zniżki na każde zakupy
+              <div className="home-main__foot__icon-foods">
+                <MdGppGood
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>10% zniżki na każde zakupy</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              {" "}
-              <GrStatusGood
-                className="home-main__icon-food"
-                style={iconStyles}
-              />
-              zniżki świąteczne{" "}
+              <div className="home-main__foot__icon-foods">
+                <MdGppGood
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>zniżki świąteczne</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              <GrStatusGood style={iconStyles} />
-              -25% na zakupy w twoje urodziny !{" "}
+              <div className="home-main__foot__icon-foods">
+                <MdGppGood
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>-25% na zakupy w twoje urodziny ! </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -86,16 +100,31 @@ const Home = () => {
           <h2>dołącz do nas również na: </h2>
           <ul className="home-main__foot__column__list">
             <li className="home-main__foot__column__lists">
-              <BsFacebook className="home-main__icon-food" />
-              FaceBook
+              <div className="home-main__foot__icon-foods">
+                <BsFacebook
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>FaceBook</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              <BsInstagram className="home-main__icon-food" />
-              Instagram
+              <div className="home-main__foot__icon-foods">
+                <BsInstagram
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>Instagram</div>
+              </div>
             </li>
             <li className="home-main__foot__column__lists">
-              <BsTwitter className="home-main__icon-food" />
-              Twitter
+              <div className="home-main__foot__icon-foods">
+                <BsTwitter
+                  className="home-main__foot__icon-food"
+                  style={iconStyles}
+                />
+                <div>Twitter</div>
+              </div>
             </li>
           </ul>
         </div>

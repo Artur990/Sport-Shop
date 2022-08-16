@@ -42,7 +42,7 @@ const SingleProduct = ({ prod }) => {
         </span>
       </div>
       <span className="products__pice-and-button">
-        <span className="products__price">{prod.price}$ </span>
+        <span className="products__price">{prod.price}ZŁ </span>
         {prod.isOpen ? (
           ""
         ) : (

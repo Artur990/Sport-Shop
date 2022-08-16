@@ -5,24 +5,31 @@
   align-content: space-between;
   justify-content: space-between;
   flex-direction: column;
-  width: 20vw;
-  min-width: 250px;
-  height: 70vh;
-  min-height: 65vmin;
+  width: 22%;
+  min-width: 20%;
+
+  height: 55vh;
+  // max-height: 60vmin;
 
   padding: 0.2rem;
   margin: 0.2rem;
-  border-style: ridge;
+  //
   border-radius: 14px;
-  box-shadow: 5px gray;
+  box-shadow: 0px 0px 10px 0px #5f5f5fe2;
   background-color: rgb(255, 255, 255);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  gap: 10px 20px;
+  &:hover {
+    box-shadow: 0px 0px 10px 0px #000000e2;
+  }
   &__title {
     text-align: center;
     cursor: pointer;
   }
   &__img {
-    width: 200px;
-    height: 200px;
+    width: 14rem;
+    height: 14rem;
     cursor: pointer;
   }
   &__deliver {
@@ -64,9 +71,12 @@
 }
 @media (orientation: landscape) and(max-width: 780px) {
   .products {
-    width: 98%;
-    height: 12rem;
-    flex-direction: row;
+    width: 40vw;
+
+    height: 40rem;
+    max-height: 50rem;
+    display: flex;
+    flex-direction: column;
   }
   .contnetProducts {
     display: flex;
@@ -83,4 +93,10 @@
   }
 }
 @media (orientation: portrait) {
+  .products {
+    width: 98%;
+    max-width: 99%;
+    height: 35rem;
+    max-height: 50rem;
+  }
 }

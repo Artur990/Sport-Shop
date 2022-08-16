@@ -3,6 +3,7 @@ import "./Modal.scss";
 import Button from "../button/button";
 import { CartState } from "../../context/Context";
 import { FaShippingFast } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 const Modal = ({ prod }) => {
   const { dispatch } = CartState();
@@ -20,7 +21,7 @@ const Modal = ({ prod }) => {
   };
 
   return (
-    <div className="portal-product">
+    <div className="portal-product" onClick={() => handleClickRemove()}>
       <div className="portal-product__main">
         <div className="portal-product__home">
           <img
@@ -31,11 +32,16 @@ const Modal = ({ prod }) => {
           <h3 style={{ color: "black" }}>{prod.name1}</h3>
           <spam className="portal-product__deliver">
             <FaShippingFast className="portal-product__icon-deliver" />{" "}
-            {prod.fast ? <div>Fast Deliver</div> : <div>4 days deliver</div>}
+            {prod.fast ? <div>zybka dostawa</div> : <div>4 Dni dostawy</div>}
           </spam>
-          <span>ocena:{prod.ratings}/5</span>
+          <span className="products__rating">
+            ocena:
+            {[...Array(...prod.ratings)].map(() => (
+              <AiFillStar className="products__stars" />
+            ))}
+          </span>
           <spam className="portal-product__price-button">
-            <spam className="portal-product__price">{prod.price}$ </spam>
+            <spam className="portal-product__price">{prod.price}ZŁ </spam>
             <button
               className="second-button "
               onClick={() => handleClickRemove()}
@@ -43,7 +49,7 @@ const Modal = ({ prod }) => {
               Zamknij
             </button>
             {prod.isOpen ? (
-              <div>dodany</div>
+              <div></div>
             ) : (
               <Button class="second-button" onClick={() => handleClickAdd()}>
                 Dodaj
@@ -51,16 +57,7 @@ const Modal = ({ prod }) => {
             )}
           </spam>
           <div>
-            <h2>
-              Damskie rolki, LADY DESQ COOLSLIDE – jak mawiają sport to zdrowie.
-              Dlatego rekreacyjna jazda na rolkach jest topowym sposobem
-              spędzania wolnego czasu
-            </h2>
-            <h3>
-              But posiada konstrukcję typu SOFT. Przednia część cholewki jest
-              miękka, a tylna ma twardy element stabilizujący. Odpowiednie
-              trzymanie kostki zapewnia klamra
-            </h3>
+            <h2>Opis produktu</h2>
           </div>
         </div>
       </div>

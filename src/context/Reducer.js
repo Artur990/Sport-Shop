@@ -16,6 +16,11 @@ export const cartReducer = (state, action) => {
           ? (e.isOpen = action.payload.isOpen)
           : e.isOpen
       ),
+      modal: state.modal.map((e) =>
+        e.id === action.payload.id
+          ? (e.isOpen = action.payload.isOpen)
+          : e.isOpen
+      ),
       ...state,
     };
   }

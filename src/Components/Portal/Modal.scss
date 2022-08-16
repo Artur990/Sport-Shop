@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.58);
+  background-color: rgba(0, 0, 0, 0.652);
   z-index: 1000;
   &__main {
     position: fixed;
@@ -15,7 +15,7 @@
     left: 25%;
     width: 50%;
     height: 90%;
-    background-color: rgba(217, 209, 217, 0.436);
+    background-color: rgb(217, 209, 217);
     z-index: 1000;
     align-items: center;
   }

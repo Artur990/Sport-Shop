@@ -33,7 +33,7 @@ const Filter = () => {
       <div className="filter__sort">
         <span className="filter__sort-up">
           <input
-            className="input"
+            className="filter__input_check"
             type="checkbox"
             name="group1"
             onChange={() =>
@@ -43,12 +43,12 @@ const Filter = () => {
               })
             }
             checked={sort === "lowToHight" ? true : false}
-          ></input>
+          />
           <label>Cena malejąco</label>
         </span>
         <span className="filter__sort-up">
           <input
-            className="input"
+            className="filter__input_check"
             type="checkbox"
             id={"inline-2"}
             onChange={() =>
@@ -58,13 +58,13 @@ const Filter = () => {
               })
             }
             checked={sort === "HightToLow" ? true : false}
-          ></input>
+          />
           <label>Cena rosnąco</label>
         </span>
 
         <span>
           <input
-            className="input"
+            className="filter__input_check"
             type="checkbox"
             onChange={() =>
               productDispatch({
@@ -73,8 +73,7 @@ const Filter = () => {
               })
             }
             checked={byfastDeliver}
-          ></input>
-
+          />
           <label>Szczybka dostawa</label>
         </span>
 
@@ -92,10 +91,14 @@ const Filter = () => {
           Otwórz filter
         </div>
         {isOpen && (
-          <div className="pierwszy" onClick={() => setIsOpen(!isOpen)}>
+          <div
+            className="filter__mobile-isOpen"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <div className="filter__mobile-float">
               <span className="filter__mobile_content">
                 <input
+                  className="filter__input_check"
                   type="checkbox"
                   name="group1"
                   onChange={() =>
@@ -110,7 +113,7 @@ const Filter = () => {
               </span>
               <span className="filter__mobile_content">
                 <input
-                  className="input"
+                  className="filter__input_check"
                   type="checkbox"
                   id={"inline-2"}
                   onChange={() =>
@@ -125,7 +128,7 @@ const Filter = () => {
               </span>
               <span className="filter__mobile_content">
                 <input
-                  className="input"
+                  className="filter__input_check"
                   type="checkbox"
                   onChange={() =>
                     productDispatch({

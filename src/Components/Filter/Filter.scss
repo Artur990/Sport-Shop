@@ -9,24 +9,31 @@
   background-color: #cecdcdee;
   color: white;
   width: 100%;
-  // min-width: 500px;
   height: 15%;
-  // min-height: 100px;
   border-radius: 10px;
   padding: 0.6rem 0rem;
   margin: 1rem 0rem;
+
   .filter__mobile {
     display: none;
   }
   label {
     color: black;
   }
+  &__input_check {
+    cursor: pointer;
+  }
   &__input_search {
     display: flex;
     border-radius: 10px;
     padding: 2px;
     border: 1px solid;
+    box-shadow: 5px 5px 4px #888888;
     background-color: white;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 0px 10px 0px #000000e2;
+    }
     &__filter {
       display: flex;
       background-color: none;
@@ -37,6 +44,7 @@
       padding: 0px;
       margin: 0px;
       border-width: 0px;
+      cursor: pointer;
     }
 
     &__filter:focus-visible {
@@ -53,28 +61,14 @@
     padding: 0px;
     margin: 0px;
     border: 0px;
+    cursor: text;
   }
 
   &__btn-clear {
     @extend .fourth-button;
     border-color: #ed3333;
+    cursor: pointer;
   }
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
-  /* minmax(300px, 1fr)*/
-  grid-gap: 30px;
-  padding: 20px;
-  justify-items: center;
-  justify-content: center;
-  align-items: start;
-}
-.box {
-  padding: 2em;
-}
-.item {
-  margin-bottom: 2em;
 }
 @media screen and (max-width: 780px) {
   .filter {
@@ -96,7 +90,15 @@
       background-color: #ed3333;
       border-radius: 2rem;
       margin-top: 1rem;
-
+      .filter__mobile-isOpen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.58);
+        z-index: 1000;
+      }
       .filter__mobile-float {
         width: 70vw;
         height: auto;
@@ -130,15 +132,6 @@
         border-bottom: 1px solid;
         color: aliceblue;
         margin: 1rem 0;
-      }
-      .pierwszy {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.58);
-        z-index: 1000;
       }
     }
   }
