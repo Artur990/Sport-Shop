@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import "./Filter.scss";
+
 import { CartState } from "../../context/Context";
 import { BiSearchAlt2 } from "react-icons/bi";
-import Button from "../button/button";
+import {
+  SEARCH,
+  LOW_TO_HIGHT,
+  HIGHT_TO_LOW,
+  BY_FAST_DELIVERE,
+  CLEAR,
+  SORT_BY_PRICE,
+} from "../../context/const";
+
+import "./Filter.scss";
+
 const Filter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -13,7 +23,7 @@ const Filter = () => {
   const [search, setSearch] = useState("");
   const handlerSearch = (e) => {
     setSearch(e.target.value);
-    productDispatch({ type: "SEARCH", payload: search.toLowerCase() });
+    productDispatch({ type: SEARCH, payload: search.toLowerCase() });
   };
 
   return (
@@ -38,11 +48,11 @@ const Filter = () => {
             name="group1"
             onChange={() =>
               productDispatch({
-                type: "sort_by_Pric",
-                payload: "lowToHight",
+                type: SORT_BY_PRICE,
+                payload: LOW_TO_HIGHT,
               })
             }
-            checked={sort === "lowToHight" ? true : false}
+            checked={sort === LOW_TO_HIGHT ? true : false}
           />
           <label>Cena malejąco</label>
         </span>
@@ -53,11 +63,11 @@ const Filter = () => {
             id={"inline-2"}
             onChange={() =>
               productDispatch({
-                type: "sort_by_Pric",
-                payload: "HightToLow",
+                type: SORT_BY_PRICE,
+                payload: HIGHT_TO_LOW,
               })
             }
-            checked={sort === "HightToLow" ? true : false}
+            checked={sort === HIGHT_TO_LOW ? true : false}
           />
           <label>Cena rosnąco</label>
         </span>
@@ -68,19 +78,19 @@ const Filter = () => {
             type="checkbox"
             onChange={() =>
               productDispatch({
-                type: "byfastDelivere",
-                payload: "HightToLow",
+                type: BY_FAST_DELIVERE,
+                payload: byfastDeliver,
               })
             }
             checked={byfastDeliver}
           />
-          <label>Szczybka dostawa</label>
+          <label>Szybka dostawa</label>
         </span>
 
         <span>
           <button
             className="filter__btn-clear"
-            onClick={() => productDispatch({ type: "clear" })}
+            onClick={() => productDispatch({ type: CLEAR })}
           >
             Czyść filtry
           </button>
@@ -103,11 +113,11 @@ const Filter = () => {
                   name="group1"
                   onChange={() =>
                     productDispatch({
-                      type: "sort_by_Pric",
-                      payload: "lowToHight",
+                      type: SORT_BY_PRICE,
+                      payload: LOW_TO_HIGHT,
                     })
                   }
-                  checked={sort === "lowToHight" ? true : false}
+                  checked={sort === LOW_TO_HIGHT ? true : false}
                 />
                 <label>Cena rosnąco</label>
               </span>
@@ -118,11 +128,11 @@ const Filter = () => {
                   id={"inline-2"}
                   onChange={() =>
                     productDispatch({
-                      type: "sort_by_Pric",
-                      payload: "HightToLow",
+                      type: SORT_BY_PRICE,
+                      payload: HIGHT_TO_LOW,
                     })
                   }
-                  checked={sort === "HightToLow" ? true : false}
+                  checked={sort === HIGHT_TO_LOW ? true : false}
                 />
                 <label>Cena malejąco</label>
               </span>
@@ -132,8 +142,8 @@ const Filter = () => {
                   type="checkbox"
                   onChange={() =>
                     productDispatch({
-                      type: "byfastDelivere",
-                      payload: "HightToLow",
+                      type: BY_FAST_DELIVERE,
+                      payload: byfastDeliver,
                     })
                   }
                   checked={byfastDeliver}
@@ -143,7 +153,7 @@ const Filter = () => {
               <span className="filter__mobile_content">
                 <button
                   className="filter__btn-clear"
-                  onClick={() => productDispatch({ type: "clear" })}
+                  onClick={() => productDispatch({ type: CLEAR })}
                 >
                   Clear Filters
                 </button>

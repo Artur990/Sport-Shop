@@ -1,8 +1,16 @@
 import React from "react";
-import { CartState } from "../../../context/Context";
 import { GrStatusGood } from "react-icons/gr";
+
+import { CartState } from "../../../context/Context";
+import {} from "../../../context/Context";
+import {
+  ADD_TO_CALCULATOR,
+  REMOVE_BUTTON_CALCLATE,
+} from "../../../context/const";
+
 import "./DietSingle.scss";
-let iconStyles = {
+
+const iconStyles = {
   color: "red",
   fontSize: "1.5em",
 };
@@ -11,11 +19,11 @@ const DietaSingle = ({ prod, id, kcal, isOpen }) => {
 
   const handleClickAdd = () => {
     foodDispatche({
-      type: "ADD_TO_CALCULATOR",
+      type: ADD_TO_CALCULATOR,
       payload: { prod, id: id, kcal: kcal },
     });
     foodDispatche({
-      type: "REMOVE_BUTTON_CALCLATE",
+      type: REMOVE_BUTTON_CALCLATE,
       payload: { id: id, isOpen: true },
     });
   };

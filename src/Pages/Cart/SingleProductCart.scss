@@ -1,12 +1,11 @@
 @use "../.././Components/scss/_butons.scss";
 @use "../.././Components/scss/variables.scss";
+
 .products-cart {
   width: 98%;
   height: 12rem;
-
   padding: 0px;
   margin: 5px;
-  // border-style: ridge;
   border-radius: 14px;
   background-color: rgb(253, 254, 255);
   display: flex;
@@ -37,8 +36,6 @@
   }
   &__number {
     width: 3rem;
-    // height: 20px;
-    // padding: 1rem;
   }
 
   &__buttons {
@@ -71,9 +68,6 @@
       sans-serif;
     font-weight: 700;
     margin: 0;
-
-    // font-size: 1.6rem;
-    // line-height: 3.2rem;
     box-sizing: border-box;
     vertical-align: middle;
     border-top-left-radius: 5px;
@@ -90,9 +84,6 @@
       sans-serif;
     font-weight: 700;
     margin: 0;
-
-    // font-size: 1.6rem;
-    // line-height: 3.2rem;
     box-sizing: border-box;
     vertical-align: middle;
     border-top-right-radius: 5px;
@@ -145,9 +136,6 @@
       sans-serif;
     font-weight: 700;
     margin: 0;
-
-    // font-size: 1.6rem;
-    // line-height: 3.2rem;
     box-sizing: border-box;
     vertical-align: middle;
     border-top-right-radius: 5px;

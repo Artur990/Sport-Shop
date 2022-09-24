@@ -1,8 +1,10 @@
 import React from "react";
 
 import useInput from "../../Components/hooks/use-input";
+
 import "./Form.scss";
-function Form() {
+
+const Form = () => {
   const {
     value: enteredName,
     isValid: enteredNameIsValid,
@@ -129,6 +131,6 @@ function Form() {
       </form>
     </div>
   );
-}
+};
 
 export default Form;

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
 import {
   BsFillArrowRightCircleFill,
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
-import "./Baner.scss";
 
-const Baner = ({ photos }) => {
+import "./Banner.scss";
+
+const Banner = ({ photos }) => {
   const [index, setIndex] = useState(0);
   const changeNext = () => {
     if (index !== photos.length - 1) {
@@ -37,4 +39,4 @@ const Baner = ({ photos }) => {
   );
 };
 
-export default Baner;
+export default Banner;

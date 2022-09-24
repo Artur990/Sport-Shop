@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Gym.scss";
+
 import img1 from "../../../assets/images/gym-workout1.jpg";
 import img2 from "../../../assets/images/gym-workout2";
 import img3 from "../../../assets/images/silowniaplan3.png";
+
+import "./Gym.scss";
+
 const Silownia = () => {
   return (
     <div className="main-gym">
@@ -71,10 +73,6 @@ const Silownia = () => {
           </li>
         </ul>
         <img src={img3} alt="img3" />
-        {/* <div>
-            Piramida (progresja ciężaru i regresja ilości
-            powtórzeń):(20,15,12,8,4,2,1) 4×10 (80% max. wyciśniętego ciężaru)
-          </div> */}
       </div>
 
       <div className="plans-gym__sections">

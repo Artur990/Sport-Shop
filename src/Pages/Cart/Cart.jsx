@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartState } from "../../context/Context";
 import { BiShoppingBag } from "react-icons/bi";
-import "./Cart.scss";
-import SingleProductCart from "./SingleProductCart";
 import { TbTruckDelivery } from "react-icons/tb";
+
+import { CartState } from "../../context/Context";
+import SingleProductCart from "./SingleProductCart";
+
+import "./Cart.scss";
 
 const Profile = () => {
   const {
     state: { cart },
   } = CartState();
   const [total, setTotal] = useState();
-  console.log(cart[0]);
+
   useEffect(() => {
     const totalCount = cart.reduce(
       (acc, cur) => acc + Number(cur.price) * Number(cur.qty),

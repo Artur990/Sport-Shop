@@ -2,8 +2,6 @@
 @use "../.././Components/scss/variables.scss";
 .main-cart {
   display: flex;
-  // flex-direction: column;
-  // text-align: center;
   &__title {
     margin-left: 4rem;
   }

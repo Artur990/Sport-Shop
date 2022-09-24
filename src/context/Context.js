@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { faker } from "@faker-js/faker";
+
 import { cartReducer } from "./Reducer";
 import { productReducer } from "./Reducer";
 import { foodReducer } from "./Reducer";

@@ -5,6 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { GrLogin } from "react-icons/gr";
 
 import { CartState } from "../../context/Context";
+
 import "./Header.scss";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

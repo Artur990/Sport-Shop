@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../Components/button/button";
 import { MdGppGood } from "react-icons/md";
 import {
   BsInstagram,
@@ -7,14 +6,14 @@ import {
   BsTwitter,
   BsTelephoneInbound,
 } from "react-icons/bs";
-import { AiOutlineMail, AiFillStar } from "react-icons/ai";
-import { FaAddressCard, FaThemeco } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaAddressCard } from "react-icons/fa";
 
 import image1 from "../../assets/images/img1.jpg";
 import image2 from "../../assets/images/img2.jpg";
 import image3 from "../../assets/images/img3.webp";
 import image4 from "../../assets/images/img4.jpg";
-import Baner from "../../Components/baner/Baner";
+import Baner from "../../Components/banner/Banner";
 
 import "./Home.scss";
 

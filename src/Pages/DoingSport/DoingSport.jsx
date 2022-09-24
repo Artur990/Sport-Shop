@@ -1,10 +1,13 @@
 import React from "react";
-import "./DoingSport.scss";
 import { Link } from "react-router-dom";
+
 import img1 from "../../assets/images/toCalculate.jpg";
 import img2 from "../../assets/images/tGym.jpg";
 import img3 from "../../assets/images/toRun.jpg";
-const DlaczegoWartoUprawiacSport = () => {
+
+import "./DoingSport.scss";
+
+const DoingSport = () => {
   return (
     <>
       <span className="sport-calculate">
@@ -64,4 +67,4 @@ const DlaczegoWartoUprawiacSport = () => {
   );
 };
 
-export default DlaczegoWartoUprawiacSport;
+export default DoingSport;

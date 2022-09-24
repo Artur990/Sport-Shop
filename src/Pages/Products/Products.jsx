@@ -1,9 +1,13 @@
 import React from "react";
-import "./Products.scss";
+
 import { CartState } from "../../context/Context";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
-import Modal from "../../Components/Portal/Modal";
+import Modal from "../../Components/modal/Modal";
 import Filter from "../../Components/Filter/Filter";
+import { LOW_TO_HIGHT } from "../../context/const";
+
+import "./Products.scss";
+import { useEffect } from "react";
 
 const Products = () => {
   const {
@@ -11,24 +15,26 @@ const Products = () => {
     state,
   } = CartState();
 
-  const transformProducts = (e) => {
-    let sortedtProdusct = state.products;
+  const transformProducts = () => {
     if (sort) {
-      sortedtProdusct = sortedtProdusct.sort((a, b) =>
-        sort === "lowToHight" ? a.price - b.price : b.price - a.price
+      return state.products.sort((a, b) =>
+        sort === LOW_TO_HIGHT ? a.price - b.price : b.price - a.price
       );
     }
     if (byfastDeliver) {
-      sortedtProdusct = sortedtProdusct.filter((prod) => prod.fast);
+      return state.products.filter((prod) => prod.fast);
     }
     if (search) {
-      sortedtProdusct = sortedtProdusct.filter((prod) =>
+      return state.products.filter((prod) =>
         prod.name1.toLowerCase().includes(search)
       );
     }
-    return sortedtProdusct;
+    return [];
   };
 
+  useEffect(() => {
+    transformProducts();
+  }, [state.products]);
   return (
     <>
       <div className="home-prod">
@@ -40,12 +46,14 @@ const Products = () => {
         )}
         <div className="home-prod__main-products">
           {transformProducts().map((prod) => (
-            <SingleProduct prod={prod} key={prod.id} />
+            <React.Fragment key={prod.id}>
+              <SingleProduct key={prod.id} prod={prod} />
+            </React.Fragment>
           ))}
         </div>
         <div>
           {state.modal.map((prod) => (
-            <Modal prod={prod} key={prod.id} />
+            <Modal key={prod.id} prod={prod} />
           ))}
         </div>
       </div>

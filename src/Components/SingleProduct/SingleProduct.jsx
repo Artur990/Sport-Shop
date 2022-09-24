@@ -1,25 +1,29 @@
 import React from "react";
-import "./SingleProduct.scss";
-import Button from "../button/button";
-import { CartState } from "../../context/Context";
 import { FaShippingFast } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
+
+import { CartState } from "../../context/Context";
+import Button from "../button/Button";
+import { ADD_TO_CARD, REMOVE_BUTTON, ADD_TO_MODAL } from "../../context/const";
+
+import "./SingleProduct.scss";
+
 const SingleProduct = ({ prod }) => {
   const { dispatch } = CartState();
 
   const handleClickAdd = () => {
-    dispatch({ type: "ADD_TO_CARD", payload: { ...prod } });
+    dispatch({ type: ADD_TO_CARD, payload: { ...prod } });
     dispatch({
-      type: "REMOVE_BUTTON",
+      type: REMOVE_BUTTON,
       payload: { id: prod.id, isOpen: true },
     });
   };
   const addModal = (e) => {
-    dispatch({ type: "ADD_TO_MODAL", payload: { ...prod } });
+    dispatch({ type: ADD_TO_MODAL, payload: { ...prod } });
   };
 
   return (
-    <div className="products">
+    <div key={prod.id} className="products">
       <img
         className="products__img"
         src={prod.image}
@@ -43,9 +47,7 @@ const SingleProduct = ({ prod }) => {
       </div>
       <span className="products__pice-and-button">
         <span className="products__price">{prod.price}ZŁ </span>
-        {prod.isOpen ? (
-          ""
-        ) : (
+        {!prod.isOpen && (
           <Button class="primery-button" onClick={handleClickAdd}>
             Doodaj
           </Button>

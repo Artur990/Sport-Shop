@@ -1,21 +1,28 @@
 import React from "react";
-import "./Modal.scss";
-import Button from "../button/button";
-import { CartState } from "../../context/Context";
 import { FaShippingFast } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
+
+import Button from "../button/Button";
+import { CartState } from "../../context/Context";
+import {
+  REMOVE_FROM_MODAL,
+  ADD_TO_CARD,
+  REMOVE_BUTTON,
+} from "../../context/const";
+
+import "./Modal.scss";
 
 const Modal = ({ prod }) => {
   const { dispatch } = CartState();
 
   const handleClickRemove = () => {
-    dispatch({ type: "REMOVE_FROM_MODAL", payload: prod });
+    dispatch({ type: REMOVE_FROM_MODAL, payload: prod });
   };
 
   const handleClickAdd = () => {
-    dispatch({ type: "ADD_TO_CARD", payload: { ...prod } });
+    dispatch({ type: ADD_TO_CARD, payload: { ...prod } });
     dispatch({
-      type: "REMOVE_BUTTON",
+      type: REMOVE_BUTTON,
       payload: { id: prod.id, isOpen: true },
     });
   };
@@ -30,18 +37,18 @@ const Modal = ({ prod }) => {
             alt={prod.name1}
           />
           <h3 style={{ color: "black" }}>{prod.name1}</h3>
-          <spam className="portal-product__deliver">
+          <span className="portal-product__deliver">
             <FaShippingFast className="portal-product__icon-deliver" />{" "}
             {prod.fast ? <div>zybka dostawa</div> : <div>4 Dni dostawy</div>}
-          </spam>
+          </span>
           <span className="products__rating">
             ocena:
             {[...Array(...prod.ratings)].map(() => (
               <AiFillStar className="products__stars" />
             ))}
           </span>
-          <spam className="portal-product__price-button">
-            <spam className="portal-product__price">{prod.price}ZŁ </spam>
+          <span className="portal-product__price-button">
+            <span className="portal-product__price">{prod.price}ZŁ </span>
             <button
               className="second-button "
               onClick={() => handleClickRemove()}
@@ -55,7 +62,7 @@ const Modal = ({ prod }) => {
                 Dodaj
               </Button>
             )}
-          </spam>
+          </span>
           <div>
             <h2>Opis produktu</h2>
           </div>

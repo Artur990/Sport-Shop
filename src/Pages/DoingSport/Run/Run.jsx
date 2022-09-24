@@ -1,6 +1,6 @@
 import React from "react";
-import "./Run.css";
-import { AiFillCloseCircle } from "react-icons/ai";
+
+import "./Run.scss";
 
 const Run = ({ setIsOpenRun }) => {
   return (
