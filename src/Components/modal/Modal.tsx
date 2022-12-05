@@ -3,7 +3,7 @@ import { FaShippingFast } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 
 import Button from "../button/Button";
-import { CartState } from "../../context/Context";
+import { CartState, ProductsType } from "../../context/Context";
 import {
   REMOVE_FROM_MODAL,
   ADD_TO_CARD,
@@ -12,11 +12,14 @@ import {
 
 import "./Modal.scss";
 
-const Modal = ({ prod }) => {
+const Modal: React.FC<ProductsType> = ({ prod }: any) => {
   const { dispatch } = CartState();
 
   const handleClickRemove = () => {
-    dispatch({ type: REMOVE_FROM_MODAL, payload: prod });
+    dispatch({
+      type: REMOVE_FROM_MODAL,
+      //  payload: prod
+    });
   };
 
   const handleClickAdd = () => {

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 
 import "./Button.scss";
 
-const Button = (props) => {
+type ButtonProps = {
+  class: string;
+  onClick: () => void;
+  style?: any;
+  children: ReactNode;
+};
+const Button: FC<ButtonProps> = (props) => {
   return (
     <>
       <button
-        //   style={{ background: props.class }}
         className={props.class}
         onClick={props.onClick}
         style={props.style}

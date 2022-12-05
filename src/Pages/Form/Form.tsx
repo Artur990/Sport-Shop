@@ -1,5 +1,6 @@
 import React from "react";
 
+// import useInput from "../../Components/hooks/use-input.tsx";
 import useInput from "../../Components/hooks/use-input";
 
 import "./Form.scss";
@@ -12,7 +13,8 @@ const Form = () => {
     valueChangeHandler: nameChangeHandler,
     inputBlurhendler: nameBlurHandler,
     rest: restNameInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput();
+
   const {
     value: enteredLastName,
     isValid: enteredLastNameIsValid,
@@ -20,7 +22,7 @@ const Form = () => {
     valueChangeHandler: LastNameChangeHandler,
     inputBlurhendler: LastNameBlurHandler,
     rest: restLastNameInput,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput();
 
   const {
     value: enteredEmail,
@@ -29,7 +31,8 @@ const Form = () => {
     valueChangeHandler: emailChangeHandler,
     inputBlurhendler: emailBlurHandler,
     rest: restEmailInput,
-  } = useInput((value) => value.trim().includes("@"));
+  } = useInput();
+
   const {
     value: enteredPassword,
     isValid: enteredPasswordIsValid,
@@ -37,7 +40,7 @@ const Form = () => {
     valueChangeHandler: passwordChangeHandler,
     inputBlurhendler: passwordBlurHandler,
     rest: restpasswordInput,
-  } = useInput((value) => value.trim().includes("@"));
+  } = useInput();
 
   let formIsValid = false;
 
@@ -50,7 +53,7 @@ const Form = () => {
     formIsValid = true;
   }
 
-  const submithandler = (e) => {
+  const submithandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (!formIsValid) {
       return;

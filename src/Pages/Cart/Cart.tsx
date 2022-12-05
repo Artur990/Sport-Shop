@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiShoppingBag } from "react-icons/bi";
 import { TbTruckDelivery } from "react-icons/tb";
 
-import { CartState } from "../../context/Context";
+import { CartState, ProductsType } from "../../context/Context";
 import SingleProductCart from "./SingleProductCart";
 
 import "./Cart.scss";
 
-const Profile = () => {
+const Profile: FC = () => {
   const {
     state: { cart },
   } = CartState();
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState([]);
 
   useEffect(() => {
     const totalCount = cart.reduce(
-      (acc, cur) => acc + Number(cur.price) * Number(cur.qty),
+      (acc: any, cur: any) => acc + Number(cur.price) * Number(cur.qty),
       0
     );
     setTotal(totalCount);
@@ -34,8 +34,8 @@ const Profile = () => {
           <div className="main-cart">
             <div className="main-cart__products">
               <span>
-                {cart.map((prod) => (
-                  <SingleProductCart prod={prod} key={prod.id} />
+                {cart.map((prod, i) => (
+                  <SingleProductCart key={i} prod={prod} />
                 ))}
               </span>
             </div>
@@ -45,7 +45,7 @@ const Profile = () => {
                 <div>Czas wysyłki do 24H w dni robocze</div>
               </h3>
               <h3 style={{ color: "grey", fontSize: "0.9rem" }}>
-                Łączna Kwota {total} ZŁ
+                * Łączna Kwota {total} ZŁ
               </h3>
               <h3>DO Zapłaty {total} ZŁ</h3>
               <Link to="/">
@@ -78,13 +78,3 @@ const Profile = () => {
 };
 
 export default Profile;
-{
-  /* <button
-            className="main-cart__button"
-            onChange={() => alert("dziękujemy za skorzystanie z zakupów")}
-          >
-            <Link style={{ textDecoration: "none", color: "white" }} to="/">
-              Przejdź do kasy
-            </Link>
-          </button> */
-}

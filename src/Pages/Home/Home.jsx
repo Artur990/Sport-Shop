@@ -13,12 +13,12 @@ import image1 from "../../assets/images/img1.jpg";
 import image2 from "../../assets/images/img2.jpg";
 import image3 from "../../assets/images/img3.webp";
 import image4 from "../../assets/images/img4.jpg";
-import Baner from "../../Components/banner/Banner";
+import Baner from "../../Components/banner/Banner.tsx";
 
 import "./Home.scss";
 
 const Home = () => {
-  const obj = [image4, image2, image3, image1];
+  const photos = [image4, image2, image3, image1];
   let iconStyles = { color: "green", fontSize: "1.5em" };
 
   return (
@@ -26,7 +26,7 @@ const Home = () => {
       <div className="baner-home">
         <Baner
           //  className="baner-home1"
-          photos={obj}
+          photos={photos}
         />
       </div>
       <div className="home-main__foot">

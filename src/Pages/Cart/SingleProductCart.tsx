@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
-import { CartState } from "../../context/Context";
+import { CartState, ProductsType } from "../../context/Context";
+
 import { REMOVE_FROM_CARD, ADD_QTY } from "../../context/const";
 
 import "./SingleProductCart.scss";
 
-const SingleProductCart = ({ prod }) => {
+const SingleProductCart = ({ prod }: any) => {
   const { dispatch } = CartState();
   const handleClickRemove = () => {
     dispatch({
@@ -16,7 +17,7 @@ const SingleProductCart = ({ prod }) => {
       payload: { id: prod.id, isOpen: false },
     });
   };
-
+  console.log(prod);
   const [count, setCount] = useState(1);
   useEffect(() => {
     if (count === 0) {
@@ -38,8 +39,8 @@ const SingleProductCart = ({ prod }) => {
       <img className="products-cart__img" src={prod.image} alt={prod.name1} />
       <div className="products-cart__description">
         <h2 style={{ color: "black" }}>{prod.name1}</h2>
-        <spam>{prod.price}zł </spam>
-        <spam>{prod.fast ? <div>Szybka dostawa</div> : "4 Dni dostawy"}</spam>
+        {/* <spam>{prod?.price}zł </spam> */}
+        {/* <spam>{prod?.fast ? <div>Szybka dostawa</div> : "4 Dni dostawy"}</spam> */}
 
         <span className="products-cart__rating">
           ocena:

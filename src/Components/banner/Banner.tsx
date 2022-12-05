@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
 import {
   BsFillArrowRightCircleFill,
@@ -7,16 +7,20 @@ import {
 
 import "./Banner.scss";
 
-const Banner = ({ photos }) => {
-  const [index, setIndex] = useState(0);
-  const changeNext = () => {
+type BanerProps = {
+  photos: string[];
+};
+
+const Banner: FC<BanerProps> = ({ photos }) => {
+  const [index, setIndex] = useState<number>(0);
+  const changeNext = (): void => {
     if (index !== photos.length - 1) {
       setIndex(index + 1);
     } else {
       setIndex(0);
     }
   };
-  const changePrevious = () => {
+  const changePrevious = (): void => {
     if (index !== 0) {
       setIndex(index - 1);
     } else {

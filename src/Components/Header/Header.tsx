@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineShoppingCart, HiMenu } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
@@ -7,16 +7,13 @@ import { GrLogin } from "react-icons/gr";
 import { CartState } from "../../context/Context";
 
 import "./Header.scss";
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Header: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const {
     state: { cart },
   } = CartState();
-  console.log(cart);
   return (
     <div className="heder">
-      {/* <ul className="heder__nav"> */}
-
       <ul className="heder__nav-left">
         <li>
           <Link to="/">
