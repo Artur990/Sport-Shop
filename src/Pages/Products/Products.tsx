@@ -1,43 +1,41 @@
-import React from "react";
+import { useEffect } from "react";
 
 import { CartState } from "../../context/Context";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
 import Modal from "../../Components/modal/Modal";
 import Filter from "../../Components/Filter/Filter";
-import { LOW_TO_HIGHT } from "../../context/const";
 
 import "./Products.scss";
-import { useEffect } from "react";
 
 const Products = () => {
+  const id = Math.random().toString(16);
+
   const {
     productState: { sort, byfastDeliver, search },
     state: { products, modal },
   } = CartState();
-  console.log(search);
-  // console.log(modal);
+
   const transformProducts = () => {
     if (sort) {
-      return products.sort((a: any, b: any) =>
+      return products.sort((a, b) =>
         sort === "lowToHight" ? a.price - b.price : b.price - a.price
       );
     }
     if (byfastDeliver) {
-      return products.filter((prod: any) => prod.fast);
-      // state.
+      return products.filter((prod) => prod.fast);
     }
 
     if (search) {
-      return products.filter((prod: any) =>
+      return products.filter((prod) =>
         prod.name1.toLowerCase().includes(search)
       );
     }
     return products;
   };
-
   useEffect(() => {
     transformProducts();
   }, [products]);
+
   return (
     <>
       <div className="home-prod">
@@ -49,15 +47,13 @@ const Products = () => {
         )}
         <div className="home-prod__main-products">
           {transformProducts()?.map((prod, index) => (
-            // <div key={prod.id}>
-            <SingleProduct key={index} prod={prod} />
-            // </div>
+            <SingleProduct key={id + index} {...prod} />
           ))}
         </div>
         <div>
-          {/* {modal?.map((prod: any, index: any) => ( */}
-          {/* <Modal key={index} prod={prod} /> */}
-          {/* ))}  */}
+          {modal.map((prod, index) => (
+            <Modal key={id + index + 2} {...prod} />
+          ))}
         </div>
       </div>
     </>

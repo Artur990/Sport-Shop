@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { CartState } from "../../../context/Context";
-import {
-  REMOVE_FROM_CALCULATOR,
-  ADD_QTY_CALCULATOR,
-} from "../../../context/const";
+import { TypeFood } from "../../../context/Reducer";
 
 import "./DietAdd.scss";
 
@@ -13,7 +10,7 @@ const DietaAdd = ({ prod, id }) => {
 
   const handleClickRemovee = () => {
     foodDispatche({
-      type: REMOVE_FROM_CALCULATOR,
+      type: TypeFood.removeButtonCalculator,
       payload: { id: id, isOpen: false },
     });
   };
@@ -23,13 +20,13 @@ const DietaAdd = ({ prod, id }) => {
   useEffect(() => {
     if (count === 0) {
       foodDispatche({
-        type: REMOVE_FROM_CALCULATOR,
+        type: TypeFood.removeFromCalculator,
         payload1: prod,
         payload: { id: id, isOpen: false },
       });
     } else {
       foodDispatche({
-        type: ADD_QTY_CALCULATOR,
+        type: TypeFood.addQtyCalculator,
         payload: { id: id, qty: Number(count) },
       });
     }

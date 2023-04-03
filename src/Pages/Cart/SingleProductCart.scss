@@ -4,14 +4,12 @@
 .products-cart {
   width: 98%;
   height: 12rem;
-  padding: 0px;
-  margin: 5px;
-  border-radius: 14px;
+  margin: 0.5rem;
+  border-radius: 1rem;
   background-color: rgb(253, 254, 255);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   box-shadow: 0px 0px 10px 0px #5f5f5fe2;
   &:hover {
     box-shadow: 0px 0px 10px 0px #000000e2;
@@ -40,7 +38,6 @@
 
   &__buttons {
     display: flex;
-    /* justify-content: space-around; */
     justify-items: center;
     align-items: center;
   }
@@ -64,8 +61,6 @@
     color: #3e3a3a;
     cursor: pointer;
     display: inline-block;
-    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
     font-weight: 700;
     margin: 0;
     box-sizing: border-box;
@@ -80,8 +75,6 @@
     color: #3e3a3a;
     cursor: pointer;
     display: inline-block;
-    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
     font-weight: 700;
     margin: 0;
     box-sizing: border-box;
@@ -95,6 +88,10 @@
 }
 
 @media screen and (max-width: 780px) {
+  .products-cart {
+    width: 90%;
+    margin: 1rem;
+  }
   .input-btn {
     display: flex;
   }
@@ -113,13 +110,8 @@
     color: #d10b10;
     cursor: pointer;
     display: inline-block;
-    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
     font-weight: 700;
     margin: 0;
-
-    // font-size: 1.6rem;
-    // line-height: 3.2rem;
     box-sizing: border-box;
     vertical-align: middle;
     border-top-left-radius: 5px;
@@ -132,8 +124,6 @@
     color: #d10b10;
     cursor: pointer;
     display: inline-block;
-    font-family: "korolev", "fira-sans", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
     font-weight: 700;
     margin: 0;
     box-sizing: border-box;

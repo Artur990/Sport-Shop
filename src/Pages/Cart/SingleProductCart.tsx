@@ -1,47 +1,44 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
-import { CartState, ProductsType } from "../../context/Context";
-
-import { REMOVE_FROM_CARD, ADD_QTY } from "../../context/const";
+import { CartState } from "../../context/Context";
+import { TypeCart } from "../../context/Reducer";
 
 import "./SingleProductCart.scss";
+import { TModal, TProductArray, TSingelProduct } from "../../types/types";
 
-const SingleProductCart = ({ prod }: any) => {
+const SingleProductCart = (prod: TProductArray) => {
+  console.log(prod);
   const { dispatch } = CartState();
   const handleClickRemove = () => {
     dispatch({
-      type: REMOVE_FROM_CARD,
-      payload1: prod,
+      type: TypeCart.RemoveFromCard,
       payload: { id: prod.id, isOpen: false },
     });
   };
-  console.log(prod);
   const [count, setCount] = useState(1);
   useEffect(() => {
     if (count === 0) {
       dispatch({
-        type: REMOVE_FROM_CARD,
-        payload1: prod,
+        type: TypeCart.RemoveFromCard,
         payload: { id: prod.id, isOpen: false },
       });
     } else {
       dispatch({
-        type: ADD_QTY,
+        type: TypeCart.addQty,
         payload: { id: prod.id, qty: Number(count) },
       });
     }
   }, [count]);
-
+  console.log(prod.ratings);
   return (
     <div className="products-cart">
       <img className="products-cart__img" src={prod.image} alt={prod.name1} />
       <div className="products-cart__description">
         <h2 style={{ color: "black" }}>{prod.name1}</h2>
-        {/* <spam>{prod?.price}zł </spam> */}
-        {/* <spam>{prod?.fast ? <div>Szybka dostawa</div> : "4 Dni dostawy"}</spam> */}
-
+        <span>{prod?.price}zł </span>
+        <span>{prod?.fast ? <div>Szybka dostawa</div> : "4 Dni dostawy"}</span>
         <span className="products-cart__rating">
           ocena:
           {[...Array(...prod.ratings)].map(() => (

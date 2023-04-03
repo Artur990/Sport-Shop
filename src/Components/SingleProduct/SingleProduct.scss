@@ -8,7 +8,7 @@
   width: 22%;
   min-width: 20%;
 
-  height: 55vh;
+  height: 90%;
   // max-height: 60vmin;
 
   padding: 0.2rem;
@@ -28,12 +28,15 @@
     cursor: pointer;
   }
   &__img {
-    width: 14rem;
-    height: 14rem;
+    width: 90%;
+    height: 40%;
     cursor: pointer;
   }
   &__deliver {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     cursor: pointer;
   }
   &__icon-deliver {
@@ -45,8 +48,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding: 5px;
-    padding-right: 17px;
+    padding: 1px;
   }
   &__price {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -72,8 +74,7 @@
 @media (orientation: landscape) and(max-width: 780px) {
   .products {
     width: 40vw;
-
-    height: 40rem;
+    height: 85%;
     max-height: 50rem;
     display: flex;
     flex-direction: column;
@@ -84,11 +85,12 @@
     align-content: space-around;
     justify-content: space-around;
     padding: 2rem;
-    width: 313%;
+    width: 100%;
+    height: 40%;
   }
   .products__img {
-    width: 13rem;
-    height: 13rem;
+    width: 90%;
+    height: 30%;
     cursor: pointer;
   }
 }

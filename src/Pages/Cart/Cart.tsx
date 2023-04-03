@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BiShoppingBag } from "react-icons/bi";
 import { TbTruckDelivery } from "react-icons/tb";
 
-import { CartState, ProductsType } from "../../context/Context";
+import { CartState } from "../../context/Context";
 import SingleProductCart from "./SingleProductCart";
 
 import "./Cart.scss";
@@ -12,16 +12,16 @@ const Profile: FC = () => {
   const {
     state: { cart },
   } = CartState();
-  const [total, setTotal] = useState([]);
+  const [total, setTotal] = useState<number>(0);
 
   useEffect(() => {
     const totalCount = cart.reduce(
-      (acc: any, cur: any) => acc + Number(cur.price) * Number(cur.qty),
+      (acc, cur: any) => acc + Number(cur.price) * Number(cur.qty),
       0
     );
     setTotal(totalCount);
   }, [cart]);
-
+  console.log(cart);
   return (
     <>
       {cart.length ? (
@@ -35,7 +35,7 @@ const Profile: FC = () => {
             <div className="main-cart__products">
               <span>
                 {cart.map((prod, i) => (
-                  <SingleProductCart key={i} prod={prod} />
+                  <SingleProductCart key={i + 92} {...prod} />
                 ))}
               </span>
             </div>

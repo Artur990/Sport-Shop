@@ -1,31 +1,26 @@
-import React from "react";
 import { FaShippingFast } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 
+import { TypeCart } from "../../context/Reducer";
 import Button from "../button/Button";
-import { CartState, ProductsType } from "../../context/Context";
-import {
-  REMOVE_FROM_MODAL,
-  ADD_TO_CARD,
-  REMOVE_BUTTON,
-} from "../../context/const";
+import { CartState } from "../../context/Context";
+import { TModal } from "../../types/types";
 
 import "./Modal.scss";
 
-const Modal: React.FC<ProductsType> = ({ prod }: any) => {
+const Modal = (prod: TModal) => {
   const { dispatch } = CartState();
 
   const handleClickRemove = () => {
     dispatch({
-      type: REMOVE_FROM_MODAL,
-      //  payload: prod
+      type: TypeCart.removeFromModal,
     });
   };
 
   const handleClickAdd = () => {
-    dispatch({ type: ADD_TO_CARD, payload: { ...prod } });
+    dispatch({ type: TypeCart.addToCart, payload: { product: prod } });
     dispatch({
-      type: REMOVE_BUTTON,
+      type: TypeCart.removeButton,
       payload: { id: prod.id, isOpen: true },
     });
   };
@@ -39,10 +34,12 @@ const Modal: React.FC<ProductsType> = ({ prod }: any) => {
             src={prod.image}
             alt={prod.name1}
           />
-          <h3 style={{ color: "black" }}>{prod.name1}</h3>
+          <h3 style={{ color: "black" }} className="portal-product__name">
+            {prod.name1}
+          </h3>
           <span className="portal-product__deliver">
             <FaShippingFast className="portal-product__icon-deliver" />{" "}
-            {prod.fast ? <div>zybka dostawa</div> : <div>4 Dni dostawy</div>}
+            {prod.fast ? <div>szybka dostawa</div> : <div>4 Dni dostawy</div>}
           </span>
           <span className="products__rating">
             ocena:
@@ -67,7 +64,7 @@ const Modal: React.FC<ProductsType> = ({ prod }: any) => {
             )}
           </span>
           <div>
-            <h2>Opis produktu</h2>
+            <h2 className="portal-product__description">Opis produktu</h2>
           </div>
         </div>
       </div>

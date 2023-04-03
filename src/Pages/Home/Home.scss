@@ -10,9 +10,6 @@
   align-items: flex-start;
   align-content: center;
   width: 100%;
-
-  // min-width: 85%;
-  font-family: "Manrope";
   height: auto;
   background-color: #050505;
   color: #ffffff;
@@ -21,32 +18,23 @@
   }
   &__column {
     width: 33%;
-    min-width: 30%;
-    text-align: start;
-    //
-    padding: 20px 30px;
-    font-family: "Righteous", & h2 {
-      text-align: center;
+    padding: 20px 10px;
+    h2 {
       padding: 15px 0px;
+      margin-left: 1rem;
       color: #fffbfb;
     }
     &__list {
-      display: flex;
       justify-items: center;
-
-      flex-direction: column;
       list-style: none;
       padding: 5px 0px;
     }
     &__lists {
       padding: 10px 10px;
-      margin: 0px;
     }
   }
   &__icon-food {
     margin: 0.5rem;
-    display: flex;
-    flex-direction: row;
   }
   &__icon-foods {
     margin-left: 0.5rem;
@@ -59,7 +47,7 @@
   .home-main__foot {
     display: flex;
     width: 98%;
-    align-items: center;
+    padding-left: 1rem;
     justify-content: center;
     flex-direction: column;
     height: auto;

@@ -1,17 +1,11 @@
-import React, { useState, FC, useCallback } from "react";
+import React, { useState } from "react";
 
 import { CartState } from "../../context/Context";
 import { BiSearchAlt2 } from "react-icons/bi";
-import {
-  SEARCH,
-  LOW_TO_HIGHT,
-  HIGHT_TO_LOW,
-  BY_FAST_DELIVERE,
-  CLEAR,
-  SORT_BY_PRICE,
-} from "../../context/const";
 import { Type } from "../../context/Reducer";
+
 import "./Filter.scss";
+
 type Props = {
   className?: string;
 };
@@ -22,6 +16,7 @@ const Filter: React.FC<Props> = () => {
     productState: { sort, byfastDeliver },
     productDispatch,
   } = CartState();
+  console.log(byfastDeliver);
 
   const [search, setSearch] = useState("");
   const handlerSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,11 +53,11 @@ const Filter: React.FC<Props> = () => {
               productDispatch({
                 type: Type.sortByprice,
                 payload: {
-                  sort: "lowToHight",
+                  sort: "hightToLow",
                 },
               })
             }
-            checked={sort === "lowToHight" ? true : false}
+            checked={sort === "hightToLow" ? true : false}
           />
           <label>Cena malejąco</label>
         </span>
@@ -75,11 +70,11 @@ const Filter: React.FC<Props> = () => {
               productDispatch({
                 type: Type.sortByprice,
                 payload: {
-                  sort: "hightToLow",
+                  sort: "lowToHight",
                 },
               })
             }
-            checked={sort === "hightToLow" ? true : false}
+            checked={sort === "lowToHight" ? true : false}
           />
           <label>Cena rosnąco</label>
         </span>
@@ -91,7 +86,9 @@ const Filter: React.FC<Props> = () => {
             onChange={() =>
               productDispatch({
                 type: Type.byFastDeliver,
-                payload: !byfastDeliver,
+                payload: {
+                  byFastDeliver: !byfastDeliver,
+                },
               })
             }
             checked={byfastDeliver}
@@ -125,11 +122,13 @@ const Filter: React.FC<Props> = () => {
                   name="group1"
                   onChange={() =>
                     productDispatch({
-                      type: SORT_BY_PRICE,
-                      payload: LOW_TO_HIGHT,
+                      type: Type.sortByprice,
+                      payload: {
+                        sort: "lowToHight",
+                      },
                     })
                   }
-                  checked={sort === LOW_TO_HIGHT ? true : false}
+                  checked={sort === "lowToHight" ? true : false}
                 />
                 <label>Cena rosnąco</label>
               </span>
@@ -140,11 +139,13 @@ const Filter: React.FC<Props> = () => {
                   id={"inline-2"}
                   onChange={() =>
                     productDispatch({
-                      type: SORT_BY_PRICE,
-                      payload: HIGHT_TO_LOW,
+                      type: Type.sortByprice,
+                      payload: {
+                        sort: "hightToLow",
+                      },
                     })
                   }
-                  checked={sort === HIGHT_TO_LOW ? true : false}
+                  checked={sort === "hightToLow" ? true : false}
                 />
                 <label>Cena malejąco</label>
               </span>
@@ -154,8 +155,10 @@ const Filter: React.FC<Props> = () => {
                   type="checkbox"
                   onChange={() =>
                     productDispatch({
-                      type: BY_FAST_DELIVERE,
-                      // payload: byfastDeliver,
+                      type: Type.byFastDeliver,
+                      payload: {
+                        byFastDeliver: false,
+                      },
                     })
                   }
                   checked={byfastDeliver}
@@ -165,7 +168,7 @@ const Filter: React.FC<Props> = () => {
               <span className="filter__mobile_content">
                 <button
                   className="filter__btn-clear"
-                  onClick={() => productDispatch({ type: CLEAR })}
+                  onClick={() => productDispatch({ type: Type.clear })}
                 >
                   Clear Filters
                 </button>

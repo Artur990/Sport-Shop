@@ -3,7 +3,6 @@
 .diet-main {
   display: flex;
   justify-content: space-around;
-  margin: 0px;
   .diet-main__total-column-mobile {
     display: none;
   }
@@ -13,7 +12,8 @@
   &__first-column {
     display: flex;
     flex-direction: column;
-    margin: 1rem, 0;
+    margin: 1rem, 0.5rem;
+    padding: 0.5rem;
     height: auto;
   }
 
@@ -29,23 +29,25 @@
   &__btn-of-products {
     @extend .primery-button;
     margin: 0;
-    width: 80px;
+    min-width: 5rem;
     height: 40px;
   }
 
   &__calculate-column {
     width: 40%;
-    height: 650px;
-    max-width: 650px;
+    padding: 0.5rem;
+    height: auto;
     overflow-y: auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: flex-start;
     background-color: rgb(255, 253, 253);
     border-left: solid 1px;
     border-right: solid 1px;
+  }
+  &__total-column {
+    padding: 0.5rem;
   }
 }
 
@@ -61,9 +63,11 @@
       border-bottom: solid 1px;
       border-top: solid 1px;
       margin: 10px, 10px;
+      padding: 1rem;
     }
     .diet-main__calculate-column {
       width: 90%;
+      padding: 1rem;
       border-left: none;
       border-right: none;
     }

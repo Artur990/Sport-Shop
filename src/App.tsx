@@ -11,6 +11,7 @@ import Diet from "./Pages/DoingSport/Diets/Diet";
 import Form from "./Pages/Form/Form";
 
 import "./App.css";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
@@ -18,7 +19,6 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/*" element={<>404</>} />
         <Route path="/dlaczegoWartoUprawiacSport" element={<DoingSport />} />
         <Route path="/sklep" element={<Products />} />
         <Route path="plantreningowy/bieganie" element={<Run />} />
@@ -26,6 +26,7 @@ const App = () => {
         <Route path="plantreningowy/dieta" element={<Diet />} />
         <Route path="koszyk" element={<Cart />} />
         <Route path="form" element={<Form />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
